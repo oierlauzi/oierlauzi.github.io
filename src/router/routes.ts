@@ -8,27 +8,43 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: 'home'
+    }
   },
   {
     path: '/about',
     name: 'AboutMe',
-    component: AboutMe
+    component: AboutMe,
+    meta: {
+      title: 'about'
+    }
+    
   },
   {
     path: '/cv',
     name: 'CurriculumVitae',
-    component: CurriculumVitae
+    component: CurriculumVitae,
+    meta: {
+      title: 'cv'
+    }
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: Contact,
+    meta: {
+      title: 'contact'
+    }
   },
   {
     path: '/*',
     name: 'NotFound',
-    component: NotFound
+    component: NotFound,
+    meta: {
+      title: '404'
+    }
   },
 ]
 

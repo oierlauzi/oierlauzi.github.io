@@ -1,4 +1,12 @@
 {
+  "routes": {
+    "home": "Portal",
+    "about": "Sobre mi",
+    "cv": "CV",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "404": "No encontrado"
+  },
   "navbar": {
     "about": "Sobre mi",
     "cv": "CV",

@@ -1,4 +1,12 @@
 {
+  "routes": {
+    "home": "Home",
+    "about": "About me",
+    "cv": "CV",
+    "projects": "Projects",
+    "contact": "Contact",
+    "404": "Not found"
+  },
   "navbar": {
     "about": "About me",
     "cv": "CV",
@@ -8,6 +16,6 @@
   "404": {
     "title": "Page not found",
     "message": "Ensure that you correctly typed the address. It is also possible that the page may be under construction",
-    "home_button": "Go to home"
+    "home_button": "Go to the homepage"
   }
 }

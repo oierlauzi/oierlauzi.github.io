@@ -1,4 +1,12 @@
 {
+  "routes": {
+    "home": "Ataria",
+    "about": "Niri buruz",
+    "cv": "CV",
+    "projects": "Proiektuak",
+    "contact": "Kontaktua",
+    "404": "Ez da aurkitu"
+  },
   "navbar": {
     "about": "Niri buruz",
     "cv": "CV",
@@ -7,7 +15,7 @@
   },
   "404": {
     "title": "Ezin izan da eskatutako horria aurkitu",
-    "message": "Ziurtatu sartutako helbidea zuzena dela. Hala ere, posible da horri hau oraindik garatu gabe egotea",
+    "message": "Ziurtatu sartutako helbidea zuzena dela. Baita ere izan liteke horri hau garapen prozesuan egotea",
     "home_button": "Atarira joan"
   }
 
