@@ -5,12 +5,16 @@
     "cv": "CV",
     "projects": "Projects",
     "contact": "Contact",
+    "cenital": "Cenital",
+    "zuazo": "Zuazo",
     "404": "Not found"
   },
   "navbar": {
     "about": "About me",
     "cv": "CV",
     "projects": "Projects",
+    "cenital": "Cenital",
+    "zuazo": "Zuazo",
     "contact": "Contact"
   },
   "404": {

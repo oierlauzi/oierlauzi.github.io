@@ -11,7 +11,8 @@
           <b-nav-item :to="{name: 'AboutMe'}">{{$t('navbar.about')}}</b-nav-item>
           <b-nav-item :to="{name: 'CurriculumVitae'}">{{$t('navbar.cv')}}</b-nav-item>
           <b-nav-item-dropdown :text="$t('navbar.projects')">
-
+            <b-dropdown-item :to="{name: 'ProjectZuazo'}">{{$t('navbar.zuazo')}}</b-dropdown-item>
+            <b-dropdown-item :to="{name: 'ProjectCenital'}">{{$t('navbar.cenital')}}</b-dropdown-item>
           </b-nav-item-dropdown>
           <b-nav-item :to="{name: 'Contact'}">{{$t('navbar.contact')}}</b-nav-item>
         </b-navbar-nav>

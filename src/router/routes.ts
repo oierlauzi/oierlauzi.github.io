@@ -3,6 +3,8 @@ import AboutMe from '@/views/AboutMe.vue'
 import CurriculumVitae from '@/views/CurriculumVitae.vue'
 import Contact from '@/views/Contact.vue'
 import NotFound from '@/views/NotFound.vue'
+import ProjectZuazo from '@/views/projects/Zuazo.vue'
+import ProjectCenital from '@/views/projects/Cenital.vue'
 
 const routes = [
   {
@@ -36,6 +38,22 @@ const routes = [
     component: Contact,
     meta: {
       title: 'contact'
+    }
+  },
+  {
+    path: '/projects/zuazo',
+    name: 'ProjectZuazo',
+    component: ProjectZuazo,
+    meta: {
+      title: 'zuazo'
+    }
+  },
+  {
+    path: '/projects/cenital',
+    name: 'ProjectCenital',
+    component: ProjectCenital,
+    meta: {
+      title: 'cenital'
     }
   },
   {
