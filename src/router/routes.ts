@@ -1,19 +1,35 @@
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
+import AboutMe from '@/views/AboutMe.vue'
+import CurriculumVitae from '@/views/CurriculumVitae.vue'
+import Contact from '@/views/Contact.vue'
+import NotFound from '@/views/NotFound.vue'
 
 const routes = [
-	{
-		path: '/',
-		name: 'Home',
-		component: Home
-	},
-	{
-		path: '/about',
-		name: 'About',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-	}
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'AboutMe',
+    component: AboutMe
+  },
+  {
+    path: '/cv',
+    name: 'CurriculumVitae',
+    component: CurriculumVitae
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/*',
+    name: 'NotFound',
+    component: NotFound
+  },
 ]
 
 export default routes

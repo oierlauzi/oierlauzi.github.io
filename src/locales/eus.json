@@ -4,5 +4,11 @@
     "cv": "CV",
     "projects": "Proiektuak",
     "contact": "Kontaktua"
+  },
+  "404": {
+    "title": "Ezin izan da eskatutako horria aurkitu",
+    "message": "Ziurtatu sartutako helbidea zuzena dela. Hala ere, posible da horri hau oraindik garatu gabe egotea",
+    "home_button": "Atarira joan"
   }
+
 }

@@ -4,5 +4,10 @@
     "cv": "CV",
     "projects": "Proyectos",
     "contact": "Contacto"
+  },
+  "404": {
+    "title": "No se ha encontrado la página solicitada",
+    "message": "Asegurese de que ha introducido la dirección correctamente. También es posible que la página se encuentre en proceso de desarrollo",
+    "home_button": "Ir al portal"
   }
 }
