@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand :to="{name: 'Home'}">Oier Lauzirika Zarrabeitia</b-navbar-brand>
 
       <!-- Next options are collapsed for small screens -->
