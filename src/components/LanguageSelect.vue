@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-nav-item-dropdown :text="locale.toUpperCase()">
+    <b-nav-item-dropdown right :text="locale.toUpperCase()">
       <b-dropdown-item v-for="loc in locales" :key="loc" :active="loc==locale" @click="switchLocale(loc)">
         {{loc.toUpperCase()}}
       </b-dropdown-item>
