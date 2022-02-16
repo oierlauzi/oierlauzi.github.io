@@ -1,5 +1,5 @@
 {
-  "routes": {
+  "common": {
     "home": "Portal",
     "about": "Sobre mi",
     "cv": "CV",
@@ -7,17 +7,27 @@
     "cenital": "Cenital",
     "zuazo": "Zuazo",
     "contact": "Contacto",
-    "404": "No encontrado"
+    "not_found": "No encontrado"
+  },
+  "routes": {
+    "home": "@:common.home",
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact",
+    "not_found": "@:common.not_found"
   },
   "navbar": {
-    "about": "Sobre mi",
-    "cv": "CV",
-    "projects": "Proyectos",
-    "cenital": "Cenital",
-    "zuazo": "Zuazo",
-    "contact": "Contacto"
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact"
   },
-  "404": {
+  "not_found": {
     "title": "No se ha encontrado la página solicitada",
     "message": "Asegurese de que ha introducido la dirección correctamente. También es posible que la página se encuentre en proceso de desarrollo",
     "home_button": "Ir al portal"

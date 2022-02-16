@@ -1,23 +1,33 @@
 {
-  "routes": {
+  "common": {
     "home": "Home",
     "about": "About me",
     "cv": "CV",
     "projects": "Projects",
-    "contact": "Contact",
     "cenital": "Cenital",
     "zuazo": "Zuazo",
-    "404": "Not found"
+    "contact": "Contact",
+    "not_found": "Not found"
+  },
+  "routes": {
+    "home": "@:common.home",
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact",
+    "not_found": "@:common.not_found"
   },
   "navbar": {
-    "about": "About me",
-    "cv": "CV",
-    "projects": "Projects",
-    "cenital": "Cenital",
-    "zuazo": "Zuazo",
-    "contact": "Contact"
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact"
   },
-  "404": {
+  "not_found": {
     "title": "Page not found",
     "message": "Ensure that you correctly typed the address. It is also possible that the page may be under construction",
     "home_button": "Go to the homepage"

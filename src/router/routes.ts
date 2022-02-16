@@ -61,7 +61,7 @@ const routes = [
     name: 'NotFound',
     component: NotFound,
     meta: {
-      title: '404'
+      title: 'not_found'
     }
   },
 ]

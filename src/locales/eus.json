@@ -1,5 +1,5 @@
 {
-  "routes": {
+  "common": {
     "home": "Ataria",
     "about": "Niri buruz",
     "cv": "CV",
@@ -7,20 +7,29 @@
     "cenital": "Cenital",
     "zuazo": "Zuazo",
     "contact": "Kontaktua",
-    "404": "Ez da aurkitu"
+    "not_found": "Ez da aurkitu"
+  },
+  "routes": {
+    "home": "@:common.home",
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact",
+    "not_found": "@:common.not_found"
   },
   "navbar": {
-    "about": "Niri buruz",
-    "cv": "CV",
-    "projects": "Proiektuak",
-    "cenital": "Cenital",
-    "zuazo": "Zuazo",
-    "contact": "Kontaktua"
+    "about": "@:common.about",
+    "cv": "@:common.cv",
+    "projects": "@:common.projects",
+    "cenital": "@:common.cenital",
+    "zuazo": "@:common.zuazo",
+    "contact": "@:common.contact"
   },
-  "404": {
+  "not_found": {
     "title": "Ezin izan da eskatutako horria aurkitu",
     "message": "Ziurtatu sartutako helbidea zuzena dela. Baita ere izan liteke horri hau garapen prozesuan egotea",
     "home_button": "Atarira joan"
   }
-
 }

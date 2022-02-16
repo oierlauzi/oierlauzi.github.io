@@ -2,10 +2,10 @@
   <div>
     <!-- Error message -->
     <b-jumbotron
-      :header="$t('404.title')"
-      :lead="$t('404.message')" 
+      :header="$t('not_found.title')"
+      :lead="$t('not_found.message')" 
     >
-      <b-button :to="{name: 'Home'}">{{$t('404.home_button')}}</b-button>
+      <b-button :to="{name: 'Home'}">{{$t('not_found.home_button')}}</b-button>
     </b-jumbotron>
   </div>
 </template>
