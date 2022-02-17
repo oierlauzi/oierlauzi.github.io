@@ -7,7 +7,10 @@
     "cenital": "Cenital",
     "zuazo": "Zuazo",
     "contact": "Kontaktua",
-    "not_found": "Ez da aurkitu"
+    "not_found": "Ez da aurkitu",
+    "download": "Deskargatu",
+    "share": "Partekatu",
+    "copy": "Kopiatu"
   },
   "routes": {
     "home": "@:common.home",
@@ -28,7 +31,10 @@
     "contact": "@:common.contact"
   },
   "cv": {
-    "path": "CV Oier Lauzirika Zarrabeitia.pdf"
+    "path": "CV_Oier_Lauzirika_Zarrabeitia.pdf",
+    "download": "@:common.download",
+    "share": "@:common.share",
+    "copy": "@:common.copy"
   },
   "not_found": {
     "title": "Ezin izan da eskatutako horria aurkitu",

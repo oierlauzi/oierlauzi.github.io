@@ -7,7 +7,10 @@
     "cenital": "Cenital",
     "zuazo": "Zuazo",
     "contact": "Contacto",
-    "not_found": "No encontrado"
+    "not_found": "No encontrado",
+    "download": "Descargar",
+    "share": "Compartir",
+    "copy": "Copiar"
   },
   "routes": {
     "home": "@:common.home",
@@ -28,7 +31,10 @@
     "contact": "@:common.contact"
   },
   "cv": {
-    "path": "CV Oier Lauzirika Zarrabeitia.pdf"
+    "path": "CV_Oier_Lauzirika_Zarrabeitia.pdf",
+    "download": "@:common.download",
+    "share": "@:common.share",
+    "copy": "@:common.copy"
   },
   "not_found": {
     "title": "No se ha encontrado la página solicitada",
