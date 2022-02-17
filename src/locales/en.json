@@ -27,6 +27,9 @@
     "zuazo": "@:common.zuazo",
     "contact": "@:common.contact"
   },
+  "cv": {
+    "path": "CV Oier Lauzirika Zarrabeitia.pdf"
+  },
   "not_found": {
     "title": "Page not found",
     "message": "Ensure that you correctly typed the address. It is also possible that the page may be under construction",

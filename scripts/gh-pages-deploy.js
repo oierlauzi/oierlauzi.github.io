@@ -11,7 +11,7 @@ const fs = require("fs");
     //Build the project
     console.log("Building started...");
     await execa("npm", ["run", "build"]);
-    const buildFolder = fs.existsSync("dist") ? "dist/" : "build/";
+    const buildFolder = "dist/";
     fs.copyFileSync(buildFolder + "index.html", buildFolder + "404.html"); // Copy index to 404
 
     //Deploy on GH pages    

@@ -1,5 +1,6 @@
 module.exports = {
   publicPath: '/',
+  outputDir: 'dist',
 
   pluginOptions: {
     i18n: {

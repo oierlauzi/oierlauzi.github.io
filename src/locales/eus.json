@@ -27,6 +27,9 @@
     "zuazo": "@:common.zuazo",
     "contact": "@:common.contact"
   },
+  "cv": {
+    "path": "CV Oier Lauzirika Zarrabeitia.pdf"
+  },
   "not_found": {
     "title": "Ezin izan da eskatutako horria aurkitu",
     "message": "Ziurtatu sartutako helbidea zuzena dela. Baita ere izan liteke horri hau garapen prozesuan egotea",
