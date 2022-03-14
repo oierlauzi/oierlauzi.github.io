@@ -10,5 +10,13 @@ module.exports = {
       enableInSFC: false,
       enableBridge: false
     }
+  },
+
+  pages: {
+    index: {
+      // entry for the page
+      entry: 'src/main.ts',
+      title: 'Oier Lauzirika Zarrabeitia',
+    },
   }
 }
