@@ -31,7 +31,7 @@
     "contact": "@:common.contact"
   },
   "cv": {
-    "path": "CV_Oier_Lauzirika_Zarrabeitia.pdf",
+    "path": "CV_EUS_Oier_Lauzirika_Zarrabeitia.pdf",
     "download": "@:common.download",
     "share": "@:common.share",
     "copy": "@:common.copy"
