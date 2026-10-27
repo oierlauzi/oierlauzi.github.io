@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { DEFAULT_LOCALE, LOCALE_META, type Locale } from '../i18n/locales';
+import { alternates, localePath, type RouteKey } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
+import { PERSON, SITE } from '../site';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  /** Page title, without the site name. Omit on the home page. */
+  title?: string;
+  description: string;
+  /** Extra path segments below the route, e.g. a project slug. */
+  rest?: string[];
+  noindex?: boolean;
+}
+
+const { locale, routeKey, title, description, rest = [], noindex = false } = Astro.props;
+
+const t = useTranslations(locale);
+const alts = alternates(routeKey, ...rest);
+const canonical = new URL(localePath(locale, routeKey, ...rest), SITE.url);
+const xDefault = new URL(localePath(DEFAULT_LOCALE, routeKey, ...rest), SITE.url);
+const pageTitle = title ? `${title} · ${PERSON.fullName}` : PERSON.fullName;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    {/* One alternate per language, plus x-default, so search engines serve the
+        right language and don't treat the three as duplicates. */}
+    {alts.map((alt) => <link rel="alternate" hreflang={alt.locale} href={new URL(alt.path, SITE.url).href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault.href} />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    {/* Only the two latin cuts are preloaded; latin-ext is fetched on demand. */}
+    <link
+      rel="preload"
+      href="/fonts/source-serif-4-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={PERSON.fullName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:locale" content={LOCALE_META[locale].intlTag.replace('-', '_')} />
+    <meta name="twitter:card" content="summary" />
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
+
+    <SiteHeader locale={locale} routeKey={routeKey} rest={rest} />
+
+    <main id="main" class="page" tabindex="-1">
+      <slot />
+    </main>
+
+    <SiteFooter locale={locale} />
+  </body>
+</html>

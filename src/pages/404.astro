@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_META } from '../i18n/locales';
+import { localePath } from '../i18n/routes';
+import { UI } from '../i18n/ui';
+import { PERSON } from '../site';
+
+// GitHub Pages serves this one file for every unmatched path, in every
+// language, so it cannot assume a locale. All three are rendered; the inline
+// script keeps only the one matching the URL that was attempted. Without
+// JavaScript all three show, which is the right fallback on a 404.
+const blocks = LOCALES.map((locale) => ({
+  locale,
+  label: LOCALE_META[locale].label,
+  title: UI[locale]['notFound.title'],
+  message: UI[locale]['notFound.message'],
+  home: UI[locale]['notFound.home'],
+  href: localePath(locale, 'home'),
+}));
+---
+
+<!doctype html>
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{UI[DEFAULT_LOCALE]['notFound.title']} · {PERSON.fullName}</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+  </head>
+
+  <body>
+    <main class="notfound page" id="main">
+      {
+        blocks.map((block) => (
+          <section class="notfound__block" lang={block.locale} data-locale={block.locale}>
+            <h1>{block.title}</h1>
+            <p>{block.message}</p>
+            <p><a href={block.href}>{block.home}</a></p>
+          </section>
+        ))
+      }
+    </main>
+
+    <script is:inline>
+      (function () {
+        var supported = ['en', 'es', 'eu'];
+        var first = location.pathname.split('/')[1];
+        if (supported.indexOf(first) === -1) return;
+
+        document.documentElement.lang = first;
+        var blocks = document.querySelectorAll('.notfound__block');
+        for (var i = 0; i < blocks.length; i++) {
+          if (blocks[i].getAttribute('data-locale') !== first) blocks[i].remove();
+        }
+      })();
+    </script>
+
+    <style>
+      .notfound {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-xl);
+        padding-block: var(--space-xl);
+      }
+
+      .notfound__block h1 {
+        font-size: var(--step-2);
+      }
+
+      .notfound__block p {
+        margin-top: var(--space-s);
+        max-width: var(--measure);
+      }
+
+      .notfound__block + .notfound__block {
+        padding-top: var(--space-xl);
+        border-top: 1px solid var(--rule);
+      }
+    </style>
+  </body>
+</html>

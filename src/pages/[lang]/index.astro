@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { assertLocale } from '../../i18n/locales';
+import { localePaths } from '../../i18n/paths';
+import { localePath } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+import { PERSON } from '../../site';
+import portrait from '../../assets/portrait.jpg';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const locale = assertLocale(Astro.params.lang);
+const t = useTranslations(locale);
+---
+
+<Base locale={locale} routeKey="home" description={`${PERSON.fullName} — ${t('site.role')}`}>
+  <div class="hero">
+    <div class="hero__text">
+      <h1>{PERSON.fullName}</h1>
+      <p class="hero__role meta">{t('site.role')}</p>
+      <Placeholder locale={locale} />
+      <p class="hero__links meta">
+        <a href={localePath(locale, 'cv')}>{t('nav.cv')}</a>
+        <a href={localePath(locale, 'projects')}>{t('nav.projects')}</a>
+      </p>
+    </div>
+
+    <Image
+      class="hero__portrait"
+      src={portrait}
+      alt={PERSON.fullName}
+      widths={[160, 240, 320]}
+      sizes="(max-width: 34rem) 160px, 240px"
+      loading="eager"
+    />
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    gap: var(--space-l);
+    margin-top: var(--space-l);
+  }
+
+  .hero__text {
+    flex: 1 1 22rem;
+  }
+
+  .hero__role {
+    margin-top: var(--space-xs);
+    font-size: var(--step-0);
+    color: var(--ink-soft);
+  }
+
+  .hero__text :global(.placeholder) {
+    margin-top: var(--space-l);
+  }
+
+  .hero__links {
+    display: flex;
+    gap: var(--space-m);
+    margin-top: var(--space-l);
+  }
+
+  .hero__portrait {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+
+  @media (min-width: 34rem) {
+    .hero__portrait {
+      width: 240px;
+      height: 240px;
+    }
+  }
+</style>

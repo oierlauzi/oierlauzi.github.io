@@ -1,0 +1,48 @@
+---
+import type { Locale } from '../i18n/locales';
+import { useTranslations } from '../i18n/ui';
+import { PERSON, PROFILE_URLS, SITE } from '../site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="colophon">
+  <div class="page colophon__inner">
+    <p class="meta">© {year} {PERSON.fullName}</p>
+    <ul class="colophon__links meta">
+      <li><a href={PROFILE_URLS.orcid} rel="me">ORCID</a></li>
+      <li><a href={PROFILE_URLS.github} rel="me">GitHub</a></li>
+      <li><a href={SITE.repo}>{t('footer.source')}</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .colophon {
+    border-top: 1px solid var(--rule);
+    padding-block: var(--space-m) var(--space-l);
+  }
+
+  .colophon__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-l);
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .colophon__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+import { LOCALES, LOCALE_META, type Locale } from '../i18n/locales';
+import { localePath, type RouteKey } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  rest?: string[];
+}
+
+const { locale, routeKey, rest = [] } = Astro.props;
+const t = useTranslations(locale);
+---
+
+{/*
+  Links to the *same page* in each language rather than to the home page, so
+  switching language on /eu/cv/ lands on /es/cv/ and not back at the top.
+  Each link carries its own `lang` and `hreflang` so a screen reader announces
+  the language name in that language.
+*/}
+<nav class="lang" aria-label={t('a11y.languageSwitcher')}>
+  <ul>
+    {
+      LOCALES.map((candidate) => {
+        const current = candidate === locale;
+        return (
+          <li>
+            <a
+              href={localePath(candidate, routeKey, ...rest)}
+              lang={candidate}
+              hreflang={candidate}
+              class:list={['lang__link', { 'lang__link--current': current }]}
+              aria-current={current ? 'true' : undefined}
+            >
+              {LOCALE_META[candidate].label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<style>
+  .lang ul {
+    display: flex;
+    gap: var(--space-s);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lang__link {
+    font-family: var(--sans);
+    font-size: var(--step--1);
+    color: var(--muted);
+    text-decoration: none;
+    padding-block: var(--space-2xs);
+  }
+
+  .lang__link:hover {
+    color: var(--accent);
+  }
+
+  .lang__link--current {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+    text-decoration-color: var(--rule-strong);
+  }
+</style>

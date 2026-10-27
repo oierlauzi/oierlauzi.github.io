@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_META } from '../i18n/locales';
+import { localePath } from '../i18n/routes';
+import { PERSON, SITE } from '../site';
+
+// No language is privileged in the URL scheme, so `/` is not a page in any one
+// language — it is a chooser. Visitors with JavaScript are redirected to their
+// own language immediately; everyone else (and every crawler) gets three links.
+const choices = LOCALES.map((locale) => ({
+  locale,
+  label: LOCALE_META[locale].label,
+  href: localePath(locale, 'home'),
+}));
+---
+
+<!doctype html>
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{PERSON.fullName}</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    {choices.map((c) => <link rel="alternate" hreflang={c.locale} href={new URL(c.href, SITE.url).href} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(localePath(DEFAULT_LOCALE, 'home'), SITE.url).href} />
+
+    {/* Runs before the body paints, so there is no flash of the chooser. */}
+    <script is:inline>
+      (function () {
+        var supported = ['en', 'es', 'eu'];
+        var target = null;
+
+        try {
+          var saved = localStorage.getItem('preferred-locale');
+          if (supported.indexOf(saved) !== -1) target = saved;
+        } catch (e) {
+          /* private mode or blocked storage — fall through to detection */
+        }
+
+        if (!target) {
+          var tags = navigator.languages || [navigator.language || ''];
+          for (var i = 0; i < tags.length; i++) {
+            var base = String(tags[i]).toLowerCase().split('-')[0];
+            if (supported.indexOf(base) !== -1) {
+              target = base;
+              break;
+            }
+          }
+        }
+
+        location.replace('/' + (target || 'en') + '/');
+      })();
+    </script>
+  </head>
+
+  <body>
+    <main class="chooser page" id="main">
+      <h1>{PERSON.fullName}</h1>
+      <nav aria-label="Language">
+        <ul>
+          {
+            choices.map((c) => (
+              <li>
+                <a href={c.href} lang={c.locale} hreflang={c.locale}>
+                  {c.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </main>
+
+    <style>
+      .chooser {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-l);
+      }
+
+      .chooser h1 {
+        font-size: var(--step-2);
+        font-weight: 600;
+      }
+
+      .chooser ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-m) var(--space-l);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .chooser a {
+        font-family: var(--sans);
+        font-size: var(--step-0);
+      }
+    </style>
+  </body>
+</html>

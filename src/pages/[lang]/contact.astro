@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { assertLocale } from '../../i18n/locales';
+import { localePaths } from '../../i18n/paths';
+import { useTranslations } from '../../i18n/ui';
+import { PERSON } from '../../site';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const locale = assertLocale(Astro.params.lang);
+const t = useTranslations(locale);
+const title = t('nav.contact');
+---
+
+<Base locale={locale} routeKey="contact" title={title} description={`${title} — ${PERSON.fullName}`}>
+  <h1>{title}</h1>
+  <div class="prose">
+    <Placeholder locale={locale} />
+  </div>
+</Base>
