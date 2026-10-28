@@ -1,0 +1,11 @@
+# A standalone library rather than part of REX: REX builds on it, but it is
+# usable on its own.
+name: vitrio
+kind: independent
+status: active
+summary:
+  en: High-throughput Cryo-EM image I/O for Python.
+  es: Entrada/salida de imagen de Cryo-EM de alto rendimiento para Python.
+  eu: Errendimendu handiko Cryo-EM irudi sarrera/irteera Python-erako.
+tech: [C++, Python]
+primaryUrl: https://github.com/gigabit-clowns/vitrio
