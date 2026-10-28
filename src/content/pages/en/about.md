@@ -1,6 +1,7 @@
 ---
 title: About me
 description: PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM and Cryo-ET image processing.
+lead: I am a PhD student at the Biocomputing Unit of the CNB-CSIC, in Madrid. I work on image processing for Cryo-EM and Cryo-ET, mostly heterogeneity analysis and image alignment.
 ---
 
 I grew up in Gernika-Lumo, in Bizkaia. I live in Madrid now.

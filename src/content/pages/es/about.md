@@ -1,6 +1,7 @@
 ---
 title: Sobre mí
 description: Doctorando en la Unidad de Biocomputación del CNB-CSIC, trabajando en procesado de imagen para Cryo-EM y Cryo-ET.
+lead: Soy doctorando en la Unidad de Biocomputación del CNB-CSIC, en Madrid. Trabajo en procesado de imagen para Cryo-EM y Cryo-ET, sobre todo en análisis de heterogeneidad y alineamiento de imágenes.
 ---
 
 Crecí en Gernika-Lumo, en Bizkaia. Ahora vivo en Madrid.

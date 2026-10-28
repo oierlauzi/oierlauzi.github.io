@@ -1,6 +1,7 @@
 ---
 title: Niri buruz
 description: Doktoregaia CNB-CSIC-eko Biokonputazio Unitatean, Cryo-EM eta Cryo-ET irudi-prozesaketan lanean.
+lead: Doktoregaia naiz CNB-CSIC zentroko Biokonputazio Unitatean, Madrilen. Cryo-EM eta Cryo-ET irudi-prozesaketan lan egiten dut, batez ere heterogeneotasunaren analisian eta irudien lerrokatzean.
 ---
 
 Gernika-Lumon hazi nintzen, Bizkaian. Orain Madrilen bizi naiz.

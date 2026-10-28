@@ -170,6 +170,14 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    /**
+     * Optional standfirst for pages that are summarised elsewhere.
+     *
+     * The home page used to slice the body's first paragraph, which let the
+     * bio's structure dictate the landing hook: opening the bio with where the
+     * author grew up made the home page open with it too.
+     */
+    lead: z.string().optional(),
   }),
 });
 

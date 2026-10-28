@@ -16,10 +16,12 @@ export function getStaticPaths() {
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
 
-// The lead is the about page's opening paragraph rather than a separate string:
-// one source of truth for the bio, so the two pages cannot drift apart.
+// Prefer an explicit `lead`, falling back to the bio's opening paragraph. The
+// two serve different jobs: the bio can open personally, while the landing page
+// should say what this person does.
 const about = await getPage(locale, 'about');
-const lead = (about.body ?? '').trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, ' ') ?? '';
+const firstParagraph = (about.body ?? '').trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, ' ') ?? '';
+const lead = about.data.lead ?? firstParagraph;
 
 // Ties the site to the ORCID iD for anything crawling by name. The preferred
 // signature goes in alternateName because that is how the papers are indexed,
