@@ -1,0 +1,16 @@
+version: 2
+
+updates:
+  # GitHub Actions only. Action majors get retired on GitHub's schedule rather
+  # than this repository's, and a deploy failing months later with no recent
+  # change to blame is the failure worth automating away.
+  #
+  # npm is deliberately excluded: the runtime surface is two packages, and an
+  # Astro major wants `npx @astrojs/upgrade` rather than a bare version bump,
+  # so those pull requests would mostly be closed by hand.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci

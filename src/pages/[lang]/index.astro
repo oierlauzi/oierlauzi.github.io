@@ -6,7 +6,7 @@ import { localePaths } from '../../i18n/paths';
 import { localePath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 import { getPage } from '../../lib/content';
-import { PERSON } from '../../site';
+import { PERSON, PROFILE_URLS, SITE } from '../../site';
 import portrait from '../../assets/portrait.jpg';
 
 export function getStaticPaths() {
@@ -21,6 +21,33 @@ const t = useTranslations(locale);
 const about = await getPage(locale, 'about');
 const lead = (about.body ?? '').trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, ' ') ?? '';
 
+// Ties the site to the ORCID iD for anything crawling by name. The preferred
+// signature goes in alternateName because that is how the papers are indexed,
+// and it is not the same string as the legal name.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: PERSON.fullName,
+  alternateName: PERSON.signature,
+  givenName: PERSON.givenName,
+  familyName: PERSON.familyName,
+  jobTitle: t('site.role'),
+  affiliation: {
+    '@type': 'Organization',
+    name: PERSON.affiliation.institution,
+    department: { '@type': 'Organization', name: PERSON.affiliation.unit },
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: PERSON.affiliation.city,
+    addressCountry: PERSON.affiliation.country,
+  },
+  url: SITE.url,
+  identifier: PROFILE_URLS.orcid,
+  sameAs: [PROFILE_URLS.orcid, PROFILE_URLS.github],
+  knowsLanguage: ['eu', 'es', 'en'],
+};
+
 const links = [
   { key: 'cv', href: localePath(locale, 'cv'), label: t('nav.cv') },
   { key: 'publications', href: localePath(locale, 'publications'), label: t('nav.publications') },
@@ -29,6 +56,10 @@ const links = [
 ---
 
 <Base locale={locale} routeKey="home" description={about.data.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
   <div class="hero">
     <div class="hero__text">
       <h1>{PERSON.fullName}</h1>

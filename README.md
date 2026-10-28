@@ -110,3 +110,35 @@ Two things that are easy to get wrong and are handled here:
   so `counter(page)` does nothing; they come from Playwright's `footerTemplate`,
   which is an isolated document that inherits no styles and defaults to zero
   font-size, hence the inline style on it.
+
+## Deployment
+
+Pushing to `main` builds the site, generates the PDFs and publishes to GitHub
+Pages via `.github/workflows/deploy.yml`.
+
+`astro check` runs **before** the build, deliberately: a missing Basque string
+should stop a deploy rather than ship a half-English page.
+
+### First-time setup
+
+The site is not live until step 2, and the order matters:
+
+1. Merge to `main`.
+2. **Settings → Pages → Source: "GitHub Actions".** Until this is switched the
+   repository still serves the old `gh-pages` branch and nothing the workflow
+   produces reaches the live site.
+3. Let the workflow run and confirm <https://oierlauzi.github.io> serves the new
+   site.
+4. **Only then** delete `origin/gh-pages`. Doing it earlier leaves a window with
+   nothing published.
+
+### Scheduled publication sync
+
+`.github/workflows/sync-publications.yml` runs monthly: it refreshes Crossref
+metadata and opens a pull request if `publications.generated.json` changed.
+
+The ORCID reconciliation is a *report*, not an output, so a month where ORCID is
+merely missing papers changes no file and opens no PR. That report is written to
+the workflow run summary instead, so every run leaves a visible note either way.
+It does not fail the job — a stale ORCID record is a thing to do, not a broken
+build.
