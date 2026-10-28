@@ -3,22 +3,36 @@ title: About me
 description: PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM and Cryo-ET image processing.
 ---
 
+I grew up in Gernika-Lumo, in Bizkaia. I live in Madrid now.
+
 I am a PhD student at the Biocomputing Unit of the Centro Nacional de
-Biotecnología (CNB-CSIC) in Madrid, supported by a “la Caixa” Foundation
-INPhINIT fellowship. My work is on image processing for Cryo-EM and Cryo-ET:
-heterogeneity analysis, fast image alignment, particle picking and ab-initio
-reconstruction.
+Biotecnología (CNB-CSIC), with a “la Caixa” Foundation INPhINIT fellowship. I
+work on image processing for Cryo-EM and Cryo-ET. Most of it is heterogeneity
+analysis, image alignment, particle picking and ab-initio reconstruction.
 
-Before starting the PhD I spent two years as technical staff in the same unit,
-maintaining the Xmipp3 package, administering HPC and GNU/Linux infrastructure,
-and developing fast image alignment algorithms.
+Before the PhD I spent two years as technical staff in the same unit. I
+maintained the Xmipp3 package, looked after the HPC and GNU/Linux machines, and
+wrote fast alignment algorithms.
 
-I studied at the Universidad Politécnica de Madrid: a B.Sc. in Sound and Image
-Engineering, followed by two parallel master's degrees, in Telecommunications
-Engineering and in Electronic Systems Engineering.
+I studied at the Universidad Politécnica de Madrid. First a degree in Sound and
+Image Engineering, then two master's degrees at the same time, in
+Telecommunications Engineering and in Electronic Systems Engineering.
 
-Outside research I write open-source software, mostly in C++ and Python. Earlier
-projects came from video and computer graphics rather than microscopy — Zuazo, a
-GPU-accelerated real-time video library built on Vulkan, and Cenital, a software
-video switcher. I also volunteer with the Asociación de Amigos del Ferrocarril
-de Madrid, preserving and maintaining historic railway equipment.
+I did not come to structural biology from biology. I came from video and
+computer graphics. My bachelor's thesis was a software video mixer, which later
+became Cenital. Before that I wrote Zuazo, a real-time video library built on
+Vulkan. The maths turned out to carry over better than I expected.
+
+What interests me is high-performance computing, computer graphics and image
+processing. I get the most out of a problem when it has a geometric analogue. If
+I can picture the shape of it, the code usually follows.
+
+Outside work I am a railway enthusiast. I volunteer at the Asociación de Amigos
+del Ferrocarril de Madrid, helping to preserve and run the Tren de los 80.
+
+I also like old computers, mostly 90s RISC workstations. I have a small
+collection of Silicon Graphics machines and I still experiment with them. They
+can run early structural biology software, which is a pleasant coincidence given
+what I do now.
+
+I get distracted by Lego more often than I should admit.
