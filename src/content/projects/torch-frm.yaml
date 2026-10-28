@@ -1,0 +1,9 @@
+name: torch-frm
+kind: research
+status: active
+summary:
+  en: Fast volumetric data alignment in PyTorch.
+  es: Alineamiento rápido de datos volumétricos en PyTorch.
+  eu: Datu bolumetrikoen lerrokatze azkarra PyTorch-en.
+tech: [Python, PyTorch]
+primaryUrl: https://github.com/oierlauzi/torch-frm

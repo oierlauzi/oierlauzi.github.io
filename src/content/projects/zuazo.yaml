@@ -1,0 +1,44 @@
+name: Zuazo
+kind: personal
+status: archived
+featured: true
+period:
+  start: '2018'
+  end: '2021'
+summary:
+  en: Real-time, GPU-accelerated video processing library written in C++ and Vulkan.
+  es: Biblioteca de procesado de vídeo en tiempo real acelerada por GPU, escrita en C++ y Vulkan.
+  eu: Denbora errealeko bideo-prozesaketa liburutegia, GPUz azeleratua, C++ eta Vulkan-en idatzia.
+tech: [C++, Vulkan, GLSL, CMake]
+primaryUrl: https://github.com/oierlauzi/zuazo
+components:
+  - name: zuazo-compositor
+    url: https://github.com/oierlauzi/zuazo-compositor
+    summary:
+      en: Combines multiple sources into one output.
+      es: Combina múltiples fuentes en una sola salida.
+      eu: Hainbat iturri irteera bakarrean konbinatzen ditu.
+  - name: zuazo-ffmpeg
+    url: https://github.com/oierlauzi/zuazo-ffmpeg
+    summary:
+      en: Compressed video input and output.
+      es: Entrada y salida de vídeo comprimido.
+      eu: Bideo konprimituaren sarrera eta irteera.
+  - name: zuazo-window
+    url: https://github.com/oierlauzi/zuazo-window
+    summary:
+      en: Window output.
+      es: Salida a ventana.
+      eu: Leiho bidezko irteera.
+  - name: zuazo-ndi
+    url: https://github.com/oierlauzi/zuazo-ndi
+    summary:
+      en: NDI input and output.
+      es: Entrada y salida NDI.
+      eu: NDI sarrera eta irteera.
+  - name: zuazo-magick
+    url: https://github.com/oierlauzi/zuazo-magick
+    summary:
+      en: Bitmap file input and output.
+      es: Entrada y salida de ficheros de mapa de bits.
+      eu: Bit-mapa fitxategien sarrera eta irteera.

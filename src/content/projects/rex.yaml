@@ -1,0 +1,40 @@
+# REX is the umbrella; rexlib is its core library. The `rex` repository itself
+# has no content yet, so rexlib carries the primary link.
+name: REX
+kind: independent
+status: in-development
+featured: true
+period:
+  start: '2024'
+  end: null
+summary:
+  en: A scalable and extensible cryo-EM image processing framework.
+  es: Un marco escalable y extensible de procesado de imagen para crio-ME.
+  eu: Krio-ME-rako irudi-prozesaketa marko eskalagarri eta hedagarria.
+tech: [C++, CUDA, Metal, Python]
+primaryUrl: https://github.com/gigabit-clowns/rexlib
+components:
+  - name: rexlib
+    url: https://github.com/gigabit-clowns/rexlib
+    summary:
+      en: Device-agnostic array computing library with a pluggable backend architecture.
+      es: Biblioteca de cálculo con arrays independiente del dispositivo, con arquitectura de backends intercambiables.
+      eu: Gailuarekiko independentea den array-kalkulu liburutegia, backend trukagarrien arkitekturarekin.
+  - name: rexlib-cuda
+    url: https://github.com/gigabit-clowns/rexlib-cuda
+    summary:
+      en: CUDA backend for rexlib.
+      es: Backend CUDA para rexlib.
+      eu: rexlib-erako CUDA backend-a.
+  - name: rexlib-python
+    url: https://github.com/gigabit-clowns/rexlib-python
+    summary:
+      en: Python bindings for rexlib.
+      es: Enlaces de Python para rexlib.
+      eu: rexlib-erako Python loturak.
+  - name: vitrio
+    url: https://github.com/gigabit-clowns/vitrio
+    summary:
+      en: High-throughput cryo-EM image I/O for Python.
+      es: Entrada/salida de imagen de crio-ME de alto rendimiento para Python.
+      eu: Errendimendu handiko krio-ME irudi sarrera/irteera Python-erako.

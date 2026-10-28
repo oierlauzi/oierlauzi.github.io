@@ -1,0 +1,19 @@
+- id: basque
+  order: 1
+  name: { en: Basque, es: Euskera, eu: Euskara }
+  level: { en: Native, es: Nativo, eu: Ama-hizkuntza }
+  cefr: C1
+  proficiency: 5
+
+- id: spanish
+  order: 2
+  name: { en: Spanish, es: Castellano, eu: Gaztelania }
+  level: { en: Native, es: Nativo, eu: Ama-hizkuntza }
+  proficiency: 5
+
+- id: english
+  order: 3
+  name: { en: English, es: Inglés, eu: Ingelesa }
+  level: { en: Advanced, es: Avanzado, eu: Aurreratua }
+  cefr: C1
+  proficiency: 4

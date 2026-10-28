@@ -34,6 +34,25 @@ export interface UIStrings {
 
   'footer.source': string;
 
+  'date.ongoing': string;
+
+  'cv.education': string;
+  'cv.experience': string;
+  'cv.internships': string;
+  'cv.awards': string;
+  'cv.skills': string;
+  'cv.languages': string;
+  'cv.volunteering': string;
+  'cv.publications': string;
+
+  'projects.research': string;
+  'projects.independent': string;
+  'projects.personal': string;
+  'projects.contributions': string;
+  'projects.components': string;
+  'status.archived': string;
+  'status.inDevelopment': string;
+
   /** Temporary, until each section has real content. */
   'placeholder.note': string;
 }
@@ -64,6 +83,25 @@ export const UI: Record<Locale, UIStrings> = {
 
     'footer.source': 'Source on GitHub',
 
+    'date.ongoing': 'Ongoing',
+
+    'cv.education': 'Education',
+    'cv.experience': 'Experience',
+    'cv.internships': 'Scholarships and internships',
+    'cv.awards': 'Awards',
+    'cv.skills': 'Skills',
+    'cv.languages': 'Languages',
+    'cv.volunteering': 'Volunteering',
+    'cv.publications': 'Publications',
+
+    'projects.research': 'Research software',
+    'projects.independent': 'Independent projects',
+    'projects.personal': 'Personal projects',
+    'projects.contributions': 'Contributions',
+    'projects.components': 'Components',
+    'status.archived': 'Archived',
+    'status.inDevelopment': 'In development',
+
     'placeholder.note': 'This section is still being written.',
   },
 
@@ -92,6 +130,25 @@ export const UI: Record<Locale, UIStrings> = {
 
     'footer.source': 'Código en GitHub',
 
+    'date.ongoing': 'Actualidad',
+
+    'cv.education': 'Formación',
+    'cv.experience': 'Experiencia',
+    'cv.internships': 'Becas y prácticas',
+    'cv.awards': 'Premios',
+    'cv.skills': 'Competencias',
+    'cv.languages': 'Idiomas',
+    'cv.volunteering': 'Voluntariado',
+    'cv.publications': 'Publicaciones',
+
+    'projects.research': 'Software de investigación',
+    'projects.independent': 'Proyectos independientes',
+    'projects.personal': 'Proyectos personales',
+    'projects.contributions': 'Contribuciones',
+    'projects.components': 'Componentes',
+    'status.archived': 'Archivado',
+    'status.inDevelopment': 'En desarrollo',
+
     'placeholder.note': 'Esta sección todavía se está escribiendo.',
   },
 
@@ -119,6 +176,25 @@ export const UI: Record<Locale, UIStrings> = {
     'notFound.home': 'Atarira joan',
 
     'footer.source': 'Iturburu-kodea GitHuben',
+
+    'date.ongoing': 'Gaur arte',
+
+    'cv.education': 'Prestakuntza',
+    'cv.experience': 'Esperientzia',
+    'cv.internships': 'Bekak eta praktikak',
+    'cv.awards': 'Sariak',
+    'cv.skills': 'Gaitasunak',
+    'cv.languages': 'Hizkuntzak',
+    'cv.volunteering': 'Boluntariotza',
+    'cv.publications': 'Argitalpenak',
+
+    'projects.research': 'Ikerketa-softwarea',
+    'projects.independent': 'Proiektu independenteak',
+    'projects.personal': 'Proiektu pertsonalak',
+    'projects.contributions': 'Ekarpenak',
+    'projects.components': 'Osagaiak',
+    'status.archived': 'Artxibatuta',
+    'status.inDevelopment': 'Garapenean',
 
     'placeholder.note': 'Atal hau idazten ari da oraindik.',
   },

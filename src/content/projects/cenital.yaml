@@ -1,0 +1,25 @@
+name: Cenital
+kind: personal
+status: archived
+period:
+  start: '2020'
+  end: '2021'
+summary:
+  en: Software-based video switcher with a web front-end.
+  es: Mezclador de vídeo por software con interfaz web.
+  eu: Software bidezko bideo-nahasgailua web interfazearekin.
+tech: [C++, Vulkan, JavaScript]
+primaryUrl: https://github.com/oierlauzi/cenital
+components:
+  - name: cenital-web-control
+    url: https://github.com/oierlauzi/cenital-web-control
+    summary:
+      en: Web application for controlling Cenital.
+      es: Aplicación web para controlar Cenital.
+      eu: Cenital kontrolatzeko web aplikazioa.
+  - name: cenital-control-panel
+    url: https://github.com/oierlauzi/cenital-control-panel
+    summary:
+      en: Hardware control panel prototype.
+      es: Prototipo de panel de control físico.
+      eu: Hardware kontrol-panelaren prototipoa.
