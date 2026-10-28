@@ -23,7 +23,10 @@ const contributions = (await getCollection('contributions')).sort((a, b) => byOr
 // Grouped by context rather than merged: work done for the research post, work
 // led independently in the same field, and older personal work are genuinely
 // different things, and collapsing them would misrepresent all three.
-const KINDS = ['research', 'independent', 'personal'] as const;
+//
+// The whole page order lives in this one list, contributions included, so
+// moving a section is a one-line change rather than shuffling template blocks.
+const SECTION_ORDER = ['research', 'independent', 'contributions', 'personal'] as const;
 
 const title = t('nav.projects');
 ---
@@ -32,11 +35,29 @@ const title = t('nav.projects');
   <h1>{title}</h1>
 
   {
-    KINDS.map((kind) => {
-      const inKind = projects.filter((p) => p.data.kind === kind);
+    SECTION_ORDER.map((section) => {
+      if (section === 'contributions') {
+        return (
+          <CvSection title={t('projects.contributions')} id="contributions">
+            <ul class="contributions">
+              {contributions.map((c) => (
+                <li>
+                  <a href={c.data.url} class="contributions__name">
+                    {c.data.name}
+                  </a>
+                  <span class="meta"> · {c.data.role[locale]}</span>
+                  <p class="meta">{c.data.summary[locale]}</p>
+                </li>
+              ))}
+            </ul>
+          </CvSection>
+        );
+      }
+
+      const inKind = projects.filter((p) => p.data.kind === section);
       if (inKind.length === 0) return null;
       return (
-        <CvSection title={t(`projects.${kind}`)} id={kind}>
+        <CvSection title={t(`projects.${section}`)} id={section}>
           {inKind.map((p) => (
             <ProjectCard
               locale={locale}
@@ -54,22 +75,6 @@ const title = t('nav.projects');
       );
     })
   }
-
-  <CvSection title={t('projects.contributions')} id="contributions">
-    <ul class="contributions">
-      {
-        contributions.map((c) => (
-          <li>
-            <a href={c.data.url} class="contributions__name">
-              {c.data.name}
-            </a>
-            <span class="meta"> · {c.data.role[locale]}</span>
-            <p class="meta">{c.data.summary[locale]}</p>
-          </li>
-        ))
-      }
-    </ul>
-  </CvSection>
 </Base>
 
 <style>
