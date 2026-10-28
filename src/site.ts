@@ -43,6 +43,15 @@ export const PERSON = {
   orcid: '0009-0003-7908-180X',
   github: 'oierlauzi',
 
+  /**
+   * Split so the full address never appears as one string in the HTML.
+   * The contact page joins these client-side into a real `mailto:` link and
+   * shows "user [at] domain" when JavaScript is unavailable — readable by a
+   * person, marginally more work for a naive harvester. It is light cover, not
+   * real protection: anything that executes JavaScript will still read it.
+   */
+  email: { user: 'olauzirika', domain: 'cnb.csic.es' },
+
   affiliation: {
     unit: 'Biocomputing Unit',
     institution: 'Centro Nacional de Biotecnología (CNB-CSIC)',

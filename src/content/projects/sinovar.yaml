@@ -4,8 +4,8 @@ status: active
 featured: true
 summary:
   en: Cryo-EM heterogeneity analysis via common lines.
-  es: Análisis de heterogeneidad en crio-ME mediante líneas comunes.
-  eu: Krio-ME-ko heterogeneotasun-analisia lerro komunen bidez.
+  es: Análisis de heterogeneidad en Cryo-EM mediante líneas comunes.
+  eu: Cryo-EM-eko heterogeneotasun-analisia lerro komunen bidez.
 tech: [Python]
 primaryUrl: https://github.com/oierlauzi/sinovar
 components:

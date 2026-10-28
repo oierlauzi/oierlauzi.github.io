@@ -3,8 +3,8 @@ kind: research
 status: active
 featured: true
 summary:
-  en: A fast and robust heterogeneity analysis algorithm for cryo-EM.
-  es: Un algoritmo rápido y robusto de análisis de heterogeneidad para crio-ME.
-  eu: Krio-ME-rako heterogeneotasun-analisi algoritmo azkar eta sendoa.
+  en: A fast and robust heterogeneity analysis algorithm for Cryo-EM.
+  es: Un algoritmo rápido y robusto de análisis de heterogeneidad para Cryo-EM.
+  eu: Cryo-EM-erako heterogeneotasun-analisi algoritmo azkar eta sendoa.
 tech: [Python]
 primaryUrl: https://github.com/oierlauzi/factorem

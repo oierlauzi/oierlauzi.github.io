@@ -1,10 +1,10 @@
 ---
+import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
 import { assertLocale } from '../../i18n/locales';
 import { localePaths } from '../../i18n/paths';
 import { useTranslations } from '../../i18n/ui';
-import { PERSON } from '../../site';
+import { getPage } from '../../lib/content';
 
 export function getStaticPaths() {
   return localePaths();
@@ -12,12 +12,21 @@ export function getStaticPaths() {
 
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
-const title = t('nav.about');
+
+// Throws, naming the file, if this language's page is missing.
+const about = await getPage(locale, 'about');
+const { Content } = await render(about);
 ---
 
-<Base locale={locale} routeKey="about" title={title} description={`${title} — ${PERSON.fullName}`}>
-  <h1>{title}</h1>
-  <div class="prose">
-    <Placeholder locale={locale} />
+<Base locale={locale} routeKey="about" title={t('nav.about')} description={about.data.description}>
+  <h1>{about.data.title}</h1>
+  <div class="prose about">
+    <Content />
   </div>
 </Base>
+
+<style>
+  .about {
+    margin-top: var(--space-m);
+  }
+</style>

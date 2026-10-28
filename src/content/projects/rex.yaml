@@ -8,9 +8,9 @@ period:
   start: '2024'
   end: null
 summary:
-  en: A scalable and extensible cryo-EM image processing framework.
-  es: Un marco escalable y extensible de procesado de imagen para crio-ME.
-  eu: Krio-ME-rako irudi-prozesaketa marko eskalagarri eta hedagarria.
+  en: A scalable and extensible Cryo-EM image processing framework.
+  es: Un marco escalable y extensible de procesado de imagen para Cryo-EM.
+  eu: Cryo-EM-erako irudi-prozesaketa marko eskalagarri eta hedagarria.
 tech: [C++, CUDA, Metal, Python]
 primaryUrl: https://github.com/gigabit-clowns/rexlib
 components:
@@ -35,6 +35,6 @@ components:
   - name: vitrio
     url: https://github.com/gigabit-clowns/vitrio
     summary:
-      en: High-throughput cryo-EM image I/O for Python.
-      es: Entrada/salida de imagen de crio-ME de alto rendimiento para Python.
-      eu: Errendimendu handiko krio-ME irudi sarrera/irteera Python-erako.
+      en: High-throughput Cryo-EM image I/O for Python.
+      es: Entrada/salida de imagen de Cryo-EM de alto rendimiento para Python.
+      eu: Errendimendu handiko Cryo-EM irudi sarrera/irteera Python-erako.

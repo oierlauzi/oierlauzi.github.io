@@ -1,0 +1,133 @@
+---
+import type { Locale } from '../i18n/locales';
+import type { Localized, Period } from '../content/schema';
+import { formatPeriod } from '../lib/dates';
+
+interface Props {
+  locale: Locale;
+  title: Localized<string>;
+  organisation: string;
+  unit?: string | undefined;
+  location?: string | undefined;
+  period: Period;
+  distinctions?: Localized<string>[];
+  bullets?: Localized<string>[];
+  url?: string | undefined;
+  ongoingLabel: string;
+}
+
+const {
+  locale,
+  title,
+  organisation,
+  unit,
+  location,
+  period,
+  distinctions = [],
+  bullets = [],
+  url,
+  ongoingLabel,
+} = Astro.props;
+
+const affiliation = [unit, organisation].filter(Boolean).join(', ');
+---
+
+<article class="entry">
+  <header class="entry__head">
+    <h3 class="entry__title">
+      {url ? <a href={url}>{title[locale]}</a> : title[locale]}
+    </h3>
+    <p class="entry__when meta">{formatPeriod(period, locale, ongoingLabel)}</p>
+  </header>
+
+  <p class="entry__where meta">
+    {affiliation}{location && <span class="entry__location"> · {location}</span>}
+  </p>
+
+  {
+    distinctions.length > 0 && (
+      <ul class="entry__distinctions">
+        {distinctions.map((d) => (
+          <li>{d[locale]}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    bullets.length > 0 && (
+      <ul class="entry__bullets">
+        {bullets.map((b) => (
+          <li>{b[locale]}</li>
+        ))}
+      </ul>
+    )
+  }
+</article>
+
+<style>
+  .entry {
+    /* An entry should not be split across a page break in the PDF. */
+    break-inside: avoid;
+  }
+
+  .entry + .entry {
+    margin-top: var(--space-m);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--rule);
+  }
+
+  /*
+   * No flex-wrap: a long title should wrap its own text and leave the date in
+   * the top-right corner, rather than pushing the date onto a new line where
+   * it reads as a stray value. Several Basque titles are long enough to hit
+   * this ("Informatika eta Telekomunikazio Ingeniaritzako Doktoretza Programa").
+   */
+  .entry__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 var(--space-m);
+  }
+
+  .entry__title {
+    font-size: var(--step-0);
+    font-weight: 600;
+    min-width: 0;
+  }
+
+  .entry__when {
+    white-space: nowrap;
+  }
+
+  .entry__where {
+    margin-top: 0.1em;
+  }
+
+  .entry__distinctions,
+  .entry__bullets {
+    margin-top: var(--space-xs);
+    padding-left: 1.1em;
+  }
+
+  .entry__distinctions {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .entry__distinctions li {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+
+  .entry__distinctions li::before {
+    content: '—';
+    color: var(--muted);
+    margin-right: 0.5em;
+  }
+
+  .entry__bullets li {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+</style>

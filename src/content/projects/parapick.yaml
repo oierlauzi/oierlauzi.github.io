@@ -2,8 +2,8 @@ name: parapick
 kind: research
 status: active
 summary:
-  en: Particle picking on cryo-ET tilt-series.
-  es: Selección de partículas en series de inclinación de crio-ET.
-  eu: Partikulen hautaketa krio-ET inklinazio-serieetan.
+  en: Particle picking on Cryo-ET tilt-series.
+  es: Selección de partículas en series de inclinación de Cryo-ET.
+  eu: Partikulen hautaketa Cryo-ET inklinazio-serieetan.
 tech: [Python]
 primaryUrl: https://github.com/oierlauzi/parapick

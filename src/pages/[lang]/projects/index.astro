@@ -1,9 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
-import Placeholder from '../../../components/Placeholder.astro';
+import CvSection from '../../../components/CvSection.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
 import { assertLocale } from '../../../i18n/locales';
 import { localePaths } from '../../../i18n/paths';
 import { useTranslations } from '../../../i18n/ui';
+import { byOrder, byProject } from '../../../lib/order';
 import { PERSON } from '../../../site';
 
 export function getStaticPaths() {
@@ -12,12 +15,74 @@ export function getStaticPaths() {
 
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
+const ongoing = t('date.ongoing');
+
+const projects = (await getCollection('projects')).sort((a, b) => byProject(a.data, b.data));
+const contributions = (await getCollection('contributions')).sort((a, b) => byOrder(a.data, b.data));
+
+// Grouped by context rather than merged: work done for the research post, work
+// led independently in the same field, and older personal work are genuinely
+// different things, and collapsing them would misrepresent all three.
+const KINDS = ['research', 'independent', 'personal'] as const;
+
 const title = t('nav.projects');
 ---
 
 <Base locale={locale} routeKey="projects" title={title} description={`${title} — ${PERSON.fullName}`}>
   <h1>{title}</h1>
-  <div class="prose">
-    <Placeholder locale={locale} />
-  </div>
+
+  {
+    KINDS.map((kind) => {
+      const inKind = projects.filter((p) => p.data.kind === kind);
+      if (inKind.length === 0) return null;
+      return (
+        <CvSection title={t(`projects.${kind}`)} id={kind}>
+          {inKind.map((p) => (
+            <ProjectCard
+              locale={locale}
+              ongoingLabel={ongoing}
+              name={p.data.name}
+              summary={p.data.summary}
+              period={p.data.period}
+              status={p.data.status}
+              tech={p.data.tech}
+              primaryUrl={p.data.primaryUrl}
+              components={p.data.components}
+            />
+          ))}
+        </CvSection>
+      );
+    })
+  }
+
+  <CvSection title={t('projects.contributions')} id="contributions">
+    <ul class="contributions">
+      {
+        contributions.map((c) => (
+          <li>
+            <a href={c.data.url} class="contributions__name">
+              {c.data.name}
+            </a>
+            <span class="meta"> · {c.data.role[locale]}</span>
+            <p class="meta">{c.data.summary[locale]}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </CvSection>
 </Base>
+
+<style>
+  .contributions {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contributions li + li {
+    margin-top: var(--space-s);
+  }
+
+  .contributions__name {
+    font-weight: 600;
+  }
+</style>

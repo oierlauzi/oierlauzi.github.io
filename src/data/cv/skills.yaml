@@ -13,9 +13,9 @@
 - id: cryoem
   order: 2
   label:
-    en: Cryo-EM and cryo-ET image processing
-    es: Procesado de imagen en crio-ME y crio-ET
-    eu: Krio-ME eta krio-ET irudi-prozesaketa
+    en: Cryo-EM and Cryo-ET image processing
+    es: Procesado de imagen en Cryo-EM y Cryo-ET
+    eu: Cryo-EM eta Cryo-ET irudi-prozesaketa
   items: [Scipion, Relion, Xmipp, CryoSPARC, EMAN, Imod, Topaz]
 
 - id: systems

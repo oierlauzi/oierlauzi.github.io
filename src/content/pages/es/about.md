@@ -1,13 +1,13 @@
 ---
 title: Sobre mí
-description: Doctorando en la Unidad de Biocomputación del CNB-CSIC, trabajando en procesado de imagen para criomicroscopía y criotomografía electrónica.
+description: Doctorando en la Unidad de Biocomputación del CNB-CSIC, trabajando en procesado de imagen para Cryo-EM y Cryo-ET.
 ---
 
 Soy doctorando en la Unidad de Biocomputación del Centro Nacional de
-Biotecnología (CNB-CSIC), en Madrid, con una beca INPhINIT de la Fundación "la
-Caixa". Mi trabajo se centra en el procesado de imagen para criomicroscopía y
-criotomografía electrónica: análisis de heterogeneidad, alineamiento rápido de
-imágenes, selección de partículas y reconstrucción ab-initio.
+Biotecnología (CNB-CSIC), en Madrid, con una beca INPhINIT de la Fundación “la
+Caixa”. Mi trabajo se centra en el procesado de imagen para Cryo-EM y Cryo-ET:
+análisis de heterogeneidad, alineamiento rápido de imágenes, selección de
+partículas y reconstrucción ab-initio.
 
 Antes de empezar el doctorado trabajé dos años como personal técnico en la misma
 unidad, manteniendo el paquete Xmipp3, administrando infraestructura HPC y

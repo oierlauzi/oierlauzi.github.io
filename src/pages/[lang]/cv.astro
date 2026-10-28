@@ -1,10 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import CvSection from '../../components/CvSection.astro';
+import CvEntry from '../../components/CvEntry.astro';
+import EmailLink from '../../components/EmailLink.astro';
 import { assertLocale } from '../../i18n/locales';
 import { localePaths } from '../../i18n/paths';
+import { localePath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
-import { PERSON } from '../../site';
+import { formatDate } from '../../lib/dates';
+import { byDateDesc, byOrder, byPeriodDesc } from '../../lib/order';
+import { PERSON, PROFILE_URLS } from '../../site';
 
 export function getStaticPaths() {
   return localePaths();
@@ -12,12 +18,249 @@ export function getStaticPaths() {
 
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
+const ongoing = t('date.ongoing');
+
+const experience = (await getCollection('experience')).sort((a, b) => byPeriodDesc(a.data, b.data));
+const education = (await getCollection('education')).sort((a, b) => byPeriodDesc(a.data, b.data));
+const internships = (await getCollection('internships')).sort((a, b) => byPeriodDesc(a.data, b.data));
+const volunteering = (await getCollection('volunteering')).sort((a, b) => byPeriodDesc(a.data, b.data));
+const awards = (await getCollection('awards')).sort((a, b) => byDateDesc(a.data, b.data));
+const skills = (await getCollection('skills')).sort((a, b) => byOrder(a.data, b.data));
+const languages = (await getCollection('languages')).sort((a, b) => byOrder(a.data, b.data));
+
 const title = t('nav.cv');
 ---
 
 <Base locale={locale} routeKey="cv" title={title} description={`${title} — ${PERSON.fullName}`}>
-  <h1>{title}</h1>
-  <div class="prose">
-    <Placeholder locale={locale} />
-  </div>
+  <header class="cv-head">
+    <h1>{PERSON.fullName}</h1>
+    <p class="cv-head__role">{t('site.role')}</p>
+    <ul class="cv-head__contact meta">
+      <li>{PERSON.affiliation.city}, {PERSON.affiliation.country}</li>
+      <li><EmailLink /></li>
+      <li><a href={PROFILE_URLS.orcid}>ORCID</a></li>
+      <li><a href={PROFILE_URLS.github}>GitHub</a></li>
+    </ul>
+  </header>
+
+  <CvSection title={t('cv.experience')} id="experience">
+    {
+      experience.map((e) => (
+        <CvEntry
+          locale={locale}
+          ongoingLabel={ongoing}
+          title={e.data.title}
+          organisation={e.data.organisation}
+          unit={e.data.unit}
+          location={e.data.location}
+          period={e.data.period}
+          distinctions={e.data.distinctions}
+          bullets={e.data.bullets}
+          url={e.data.url}
+        />
+      ))
+    }
+  </CvSection>
+
+  <CvSection title={t('cv.education')} id="education">
+    {
+      education.map((e) => (
+        <CvEntry
+          locale={locale}
+          ongoingLabel={ongoing}
+          title={e.data.title}
+          organisation={e.data.organisation}
+          unit={e.data.unit}
+          location={e.data.location}
+          period={e.data.period}
+          distinctions={e.data.distinctions}
+          bullets={e.data.bullets}
+          url={e.data.url}
+        />
+      ))
+    }
+  </CvSection>
+
+  <CvSection title={t('cv.publications')} id="publications">
+    <p class="prose">
+      <a href={localePath(locale, 'publications')}>{t('cv.publications')}</a>
+    </p>
+  </CvSection>
+
+  <CvSection title={t('cv.awards')} id="awards">
+    <ul class="awards">
+      {
+        awards.map((a) => (
+          <li class="award">
+            <div class="award__head">
+              <span class="award__title">
+                {a.data.url ? <a href={a.data.url}>{a.data.title[locale]}</a> : a.data.title[locale]}
+              </span>
+              <span class="meta award__when">{formatDate(a.data.date, locale)}</span>
+            </div>
+            <p class="meta">
+              {a.data.context?.[locale]}
+              {a.data.organisation && <span> · {a.data.organisation}</span>}
+              {a.data.location && <span> · {a.data.location}</span>}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </CvSection>
+
+  <CvSection title={t('cv.internships')} id="internships">
+    {
+      internships.map((e) => (
+        <CvEntry
+          locale={locale}
+          ongoingLabel={ongoing}
+          title={e.data.title}
+          organisation={e.data.organisation}
+          unit={e.data.unit}
+          location={e.data.location}
+          period={e.data.period}
+        />
+      ))
+    }
+  </CvSection>
+
+  <CvSection title={t('cv.skills')} id="skills">
+    <dl class="skills">
+      {
+        skills.map((s) => (
+          <div class="skills__group">
+            <dt>{s.data.label[locale]}</dt>
+            <dd>
+              {s.data.items.join(' · ')}
+              {s.data.note && <span class="skills__note">{s.data.items.length > 0 && ' — '}{s.data.note[locale]}</span>}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </CvSection>
+
+  <CvSection title={t('cv.languages')} id="languages">
+    <ul class="languages">
+      {
+        languages.map((l) => (
+          <li>
+            <span class="languages__name">{l.data.name[locale]}</span>
+            <span class="meta">
+              {l.data.level[locale]}
+              {l.data.cefr && ` · ${l.data.cefr}`}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </CvSection>
+
+  <CvSection title={t('cv.volunteering')} id="volunteering">
+    {
+      volunteering.map((e) => (
+        <CvEntry
+          locale={locale}
+          ongoingLabel={ongoing}
+          title={e.data.title}
+          organisation={e.data.organisation}
+          unit={e.data.unit}
+          location={e.data.location}
+          period={e.data.period}
+        />
+      ))
+    }
+  </CvSection>
 </Base>
+
+<style>
+  .cv-head {
+    margin-bottom: var(--space-l);
+  }
+
+  .cv-head h1 {
+    font-size: var(--step-3);
+  }
+
+  .cv-head__role {
+    margin-top: var(--space-xs);
+    color: var(--ink-soft);
+  }
+
+  .cv-head__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-m);
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-s);
+  }
+
+  .awards,
+  .languages {
+    list-style: none;
+    padding: 0;
+  }
+
+  .award {
+    break-inside: avoid;
+  }
+
+  .award + .award {
+    margin-top: var(--space-s);
+  }
+
+  .award__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 var(--space-m);
+  }
+
+  .award__title {
+    font-weight: 600;
+    min-width: 0;
+  }
+
+  .award__when {
+    white-space: nowrap;
+  }
+
+  .skills__group {
+    break-inside: avoid;
+  }
+
+  .skills__group + .skills__group {
+    margin-top: var(--space-s);
+  }
+
+  .skills dt {
+    font-family: var(--sans);
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+
+  .skills dd {
+    margin: 0;
+  }
+
+  .skills__note {
+    color: var(--ink-soft);
+  }
+
+  .languages li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-s);
+    align-items: baseline;
+  }
+
+  .languages li + li {
+    margin-top: var(--space-2xs);
+  }
+
+  .languages__name {
+    min-width: 7rem;
+  }
+</style>

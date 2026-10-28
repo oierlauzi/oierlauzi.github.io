@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
 import { assertLocale } from '../../i18n/locales';
 import { localePaths } from '../../i18n/paths';
 import { localePath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { getPage } from '../../lib/content';
 import { PERSON } from '../../site';
 import portrait from '../../assets/portrait.jpg';
 
@@ -15,18 +15,31 @@ export function getStaticPaths() {
 
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
+
+// The lead is the about page's opening paragraph rather than a separate string:
+// one source of truth for the bio, so the two pages cannot drift apart.
+const about = await getPage(locale, 'about');
+const lead = (about.body ?? '').trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, ' ') ?? '';
+
+const links = [
+  { key: 'cv', href: localePath(locale, 'cv'), label: t('nav.cv') },
+  { key: 'publications', href: localePath(locale, 'publications'), label: t('nav.publications') },
+  { key: 'projects', href: localePath(locale, 'projects'), label: t('nav.projects') },
+];
 ---
 
-<Base locale={locale} routeKey="home" description={`${PERSON.fullName} — ${t('site.role')}`}>
+<Base locale={locale} routeKey="home" description={about.data.description}>
   <div class="hero">
     <div class="hero__text">
       <h1>{PERSON.fullName}</h1>
-      <p class="hero__role meta">{t('site.role')}</p>
-      <Placeholder locale={locale} />
-      <p class="hero__links meta">
-        <a href={localePath(locale, 'cv')}>{t('nav.cv')}</a>
-        <a href={localePath(locale, 'projects')}>{t('nav.projects')}</a>
+      <p class="hero__role">{t('site.role')}</p>
+      <p class="hero__lead">{lead}</p>
+      <p class="hero__more">
+        <a href={localePath(locale, 'about')}>{t('nav.about')}</a>
       </p>
+      <ul class="hero__links meta">
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
     </div>
 
     <Image
@@ -53,20 +66,36 @@ const t = useTranslations(locale);
     flex: 1 1 22rem;
   }
 
-  .hero__role {
-    margin-top: var(--space-xs);
-    font-size: var(--step-0);
-    color: var(--ink-soft);
+  .hero h1 {
+    font-size: var(--step-3);
   }
 
-  .hero__text :global(.placeholder) {
-    margin-top: var(--space-l);
+  .hero__role {
+    margin-top: var(--space-xs);
+    font-family: var(--sans);
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+
+  .hero__lead {
+    margin-top: var(--space-m);
+    max-width: var(--measure);
+  }
+
+  .hero__more {
+    margin-top: var(--space-xs);
+    font-size: var(--step--1);
   }
 
   .hero__links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-m);
+    list-style: none;
+    padding: 0;
     margin-top: var(--space-l);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--rule);
   }
 
   .hero__portrait {

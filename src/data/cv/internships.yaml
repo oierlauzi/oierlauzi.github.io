@@ -1,5 +1,21 @@
 # Training scholarships and student internships.
 
+- id: summer-at-simons
+  title:
+    en: Summer at Simons research internship
+    es: Estancia de investigación Summer at Simons
+    eu: Summer at Simons ikerketa-egonaldia
+  organisation: Flatiron Institute, Simons Foundation
+  unit: Center for Computational Biology
+  location: New York
+  period:
+    start: '2026'
+    end: '2026'
+  bullets:
+    - en: Ten-week summer research placement
+      es: Estancia de investigación de verano de diez semanas
+      eu: Udako hamar asteko ikerketa-egonaldia
+
 - id: jae-intro
   title:
     en: CSIC JAE-Intro Severo Ochoa y María de Maeztu scholarship
