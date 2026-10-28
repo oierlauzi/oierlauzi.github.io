@@ -1,0 +1,155 @@
+[
+  {
+    "id": "alignpca-2d",
+    "doi": "10.1107/s2059798326004572",
+    "type": "journal",
+    "title": "<i>AlignPCA</i>-2<i>D</i>: PCA-reduced Euclidean vector alignment for 2D classification in cryo-EM",
+    "titleText": "AlignPCA-2D: PCA-reduced Euclidean vector alignment for 2D classification in cryo-EM",
+    "authors": [
+      {
+        "name": "E. Ramírez-Aportela",
+        "self": false
+      },
+      {
+        "name": "O. L. Zarrabeitia",
+        "self": true
+      },
+      {
+        "name": "Y. C. Fonseca",
+        "self": false
+      },
+      {
+        "name": "T. Ceska",
+        "self": false
+      },
+      {
+        "name": "S. Subramaniam",
+        "self": false
+      },
+      {
+        "name": "J. M. Carazo",
+        "self": false
+      },
+      {
+        "name": "C. O. S. Sorzano",
+        "self": false
+      }
+    ],
+    "venue": "Acta Crystallographica Section D Structural Biology",
+    "venueShort": "Acta Crystallogr D Struct Biol",
+    "volume": "82",
+    "issue": "7",
+    "pages": "727-739",
+    "year": "2026",
+    "month": "06",
+    "publisher": "International Union of Crystallography (IUCr)",
+    "url": "https://doi.org/10.1107/s2059798326004572",
+    "preprintUrl": "https://doi.org/10.64898/2026.02.11.705027"
+  },
+  {
+    "id": "distinguishable-classes",
+    "doi": "10.1107/s2059798325007831",
+    "type": "journal",
+    "title": "How many (distinguishable) classes can we identify in single-particle analysis?",
+    "titleText": "How many (distinguishable) classes can we identify in single-particle analysis?",
+    "authors": [
+      {
+        "name": "O. L. Zarrabeitia",
+        "self": true
+      },
+      {
+        "name": "M. Pernica",
+        "self": false
+      },
+      {
+        "name": "D. Herreros",
+        "self": false
+      },
+      {
+        "name": "E. Ramírez-Aportela",
+        "self": false
+      },
+      {
+        "name": "J. Krieger",
+        "self": false
+      },
+      {
+        "name": "M. Gragera",
+        "self": false
+      },
+      {
+        "name": "M. Iceta",
+        "self": false
+      },
+      {
+        "name": "P. Conesa",
+        "self": false
+      },
+      {
+        "name": "Y. Fonseca",
+        "self": false
+      },
+      {
+        "name": "J. Jiménez",
+        "self": false
+      },
+      {
+        "name": "J. Filipovic",
+        "self": false
+      },
+      {
+        "name": "J. M. Carazo",
+        "self": false
+      },
+      {
+        "name": "C. O. S. Sorzano",
+        "self": false
+      }
+    ],
+    "venue": "Acta Crystallographica Section D Structural Biology",
+    "venueShort": "Acta Crystallogr D Struct Biol",
+    "volume": "81",
+    "issue": "10",
+    "pages": "535-544",
+    "year": "2025",
+    "month": "09",
+    "publisher": "International Union of Crystallography (IUCr)",
+    "url": "https://doi.org/10.1107/s2059798325007831",
+    "preprintUrl": null
+  },
+  {
+    "id": "isbi-2024-alignment",
+    "doi": "10.1109/isbi56570.2024.10635352",
+    "type": "conference",
+    "title": "Fast Global Image Alignment Algorithm for CryoEM through Vector Compression",
+    "titleText": "Fast Global Image Alignment Algorithm for CryoEM through Vector Compression",
+    "authors": [
+      {
+        "name": "O. L. Zarrabeitia",
+        "self": true
+      },
+      {
+        "name": "E. Ramírez-Aportela",
+        "self": false
+      },
+      {
+        "name": "J.M. Carazo",
+        "self": false
+      },
+      {
+        "name": "C.O.S. Sorzano",
+        "self": false
+      }
+    ],
+    "venue": "2024 IEEE International Symposium on Biomedical Imaging (ISBI)",
+    "venueShort": null,
+    "volume": null,
+    "issue": null,
+    "pages": "1-4",
+    "year": "2024",
+    "month": "05",
+    "publisher": "IEEE",
+    "url": "https://doi.org/10.1109/isbi56570.2024.10635352",
+    "preprintUrl": null
+  }
+]

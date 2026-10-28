@@ -1,0 +1,39 @@
+# Works with no Crossref DOI, written out by hand. Read directly by the site;
+# the sync script never touches this file.
+
+- id: ikergazte-2025
+  type: conference
+  title: Heterogeneotasunaren analisi azkar eta automatizatua krio-mikroskopia elektronikoan
+  # TODO(oier): full author list and page numbers — aldizkariak.ueu.eus is
+  # blocked from the build environment, so these could not be fetched.
+  authors:
+    - O. L. Zarrabeitia
+  venue: Ikergazte
+  year: '2025'
+  location: Bilbao
+  language: eu
+  url: https://aldizkariak.ueu.eus/index.php/ikergazte/article/view/5911
+
+- id: msc-thesis-classification
+  type: thesis
+  title: Development of novel 3D classification methods for Cryo-Electron Microscopy
+  authors:
+    - O. L. Zarrabeitia
+  venue: Universidad Politécnica de Madrid
+  note: M.Sc. in Electronic Systems Engineering
+  year: '2024'
+  language: en
+  # TODO(oier): confirm the oa.upm.es record id. Searches returned the same
+  # id (75340) for both theses, and the host is blocked here, so neither URL
+  # is set rather than guessing wrong.
+
+- id: msc-thesis-alignment
+  type: thesis
+  title: Development of a fast image alignment algorithm for Cryo-Electron Microscopy
+  authors:
+    - O. L. Zarrabeitia
+  venue: Universidad Politécnica de Madrid
+  note: M.Sc. in Telecommunications Engineering
+  year: '2023'
+  language: en
+  # TODO(oier): confirm the oa.upm.es record id (see above).

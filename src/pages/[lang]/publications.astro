@@ -1,9 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import CvSection from '../../components/CvSection.astro';
 import { assertLocale } from '../../i18n/locales';
 import { localePaths } from '../../i18n/paths';
-import { useTranslations } from '../../i18n/ui';
+import { useTranslations, type UIStrings } from '../../i18n/ui';
+import { byType, getPublications, TYPE_ORDER } from '../../lib/publications';
 import { PERSON } from '../../site';
 
 export function getStaticPaths() {
@@ -13,11 +14,120 @@ export function getStaticPaths() {
 const locale = assertLocale(Astro.params.lang);
 const t = useTranslations(locale);
 const title = t('nav.publications');
+
+const publications = await getPublications();
+
+/**
+ * Only a doi.org URL may be labelled "DOI". The Basque Ikergazte article has a
+ * plain journal URL, and calling that a DOI would be simply wrong.
+ */
+function linkLabel(p: { url: string | null; type: string }): string {
+  if (p.url?.startsWith('https://doi.org/')) return t('pub.doi');
+  if (p.type === 'thesis') return t('pub.pdf');
+  return t('pub.link');
+}
+
+// Publication titles, venues and author names are never translated — they are
+// quoted, not localised. Only the group headings and link labels come from the
+// UI dictionary.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': publications.map((p) => ({
+    '@type': p.type === 'thesis' ? 'Thesis' : 'ScholarlyArticle',
+    name: p.titleText,
+    author: p.authors.map((a) => ({ '@type': 'Person', name: a.name })),
+    datePublished: p.month ? `${p.year}-${p.month}` : p.year,
+    ...(p.venue ? { isPartOf: { '@type': 'Periodical', name: p.venue } } : {}),
+    ...(p.url ? { url: p.url, sameAs: p.url } : {}),
+    inLanguage: p.language ?? 'en',
+  })),
+};
 ---
 
 <Base locale={locale} routeKey="publications" title={title} description={`${title} — ${PERSON.fullName}`}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
   <h1>{title}</h1>
-  <div class="prose">
-    <Placeholder locale={locale} />
-  </div>
+
+  {
+    TYPE_ORDER.map((type) => {
+      const group = byType(publications, type);
+      if (group.length === 0) return null;
+      return (
+        <CvSection title={t(`pub.${type}` as keyof UIStrings)} id={type}>
+          <ol class="pubs">
+            {group.map((p) => (
+              <li class="pub" lang={p.language ?? undefined}>
+                <h3 class="pub__title" set:html={p.titleHtml} />
+                <p class="pub__authors">
+                  {p.authors.map((a, i) => (
+                    <>
+                      {i > 0 && ', '}
+                      {a.self ? <strong>{a.name}</strong> : a.name}
+                    </>
+                  ))}
+                </p>
+                <p class="pub__where meta">
+                  {p.venue && <em>{p.venue}</em>}
+                  {p.detail && <span> · {p.detail}</span>}
+                  <span> · {p.year}</span>
+                </p>
+                <p class="pub__links meta">
+                  {p.url && <a href={p.url}>{linkLabel(p)}</a>}
+                  {p.preprintUrl && <a href={p.preprintUrl}>{t('pub.preprint')}</a>}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </CvSection>
+      );
+    })
+  }
 </Base>
+
+<style>
+  .pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pub {
+    break-inside: avoid;
+  }
+
+  .pub + .pub {
+    margin-top: var(--space-m);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--rule);
+  }
+
+  .pub__title {
+    font-size: var(--step-0);
+    font-weight: 600;
+    max-width: var(--measure);
+  }
+
+  .pub__authors {
+    margin-top: 0.15em;
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    max-width: var(--measure);
+  }
+
+  .pub__where {
+    margin-top: 0.1em;
+  }
+
+  .pub__links {
+    display: flex;
+    gap: var(--space-m);
+    margin-top: var(--space-xs);
+  }
+
+  .pub__links:empty {
+    display: none;
+  }
+</style>

@@ -45,6 +45,14 @@ export interface UIStrings {
   'cv.volunteering': string;
   'cv.publications': string;
 
+  'pub.journal': string;
+  'pub.conference': string;
+  'pub.thesis': string;
+  'pub.preprint': string;
+  'pub.doi': string;
+  'pub.link': string;
+  'pub.pdf': string;
+
   'projects.research': string;
   'projects.independent': string;
   'projects.personal': string;
@@ -94,6 +102,14 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.volunteering': 'Volunteering',
     'cv.publications': 'Publications',
 
+    'pub.journal': 'Journal articles',
+    'pub.conference': 'Conference proceedings',
+    'pub.thesis': 'Theses',
+    'pub.preprint': 'Preprint',
+    'pub.doi': 'DOI',
+    'pub.pdf': 'PDF',
+    'pub.link': 'Link',
+
     'projects.research': 'Research software',
     'projects.independent': 'Independent projects',
     'projects.personal': 'Personal projects',
@@ -141,6 +157,14 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.volunteering': 'Voluntariado',
     'cv.publications': 'Publicaciones',
 
+    'pub.journal': 'Artículos en revista',
+    'pub.conference': 'Actas de congreso',
+    'pub.thesis': 'Tesis',
+    'pub.preprint': 'Preprint',
+    'pub.doi': 'DOI',
+    'pub.pdf': 'PDF',
+    'pub.link': 'Enlace',
+
     'projects.research': 'Software de investigación',
     'projects.independent': 'Proyectos independientes',
     'projects.personal': 'Proyectos personales',
@@ -187,6 +211,14 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Hizkuntzak',
     'cv.volunteering': 'Boluntariotza',
     'cv.publications': 'Argitalpenak',
+
+    'pub.journal': 'Aldizkari-artikuluak',
+    'pub.conference': 'Kongresuko aktak',
+    'pub.thesis': 'Tesiak',
+    'pub.preprint': 'Preprinta',
+    'pub.doi': 'DOI',
+    'pub.pdf': 'PDF',
+    'pub.link': 'Esteka',
 
     'projects.research': 'Ikerketa-softwarea',
     'projects.independent': 'Proiektu independenteak',

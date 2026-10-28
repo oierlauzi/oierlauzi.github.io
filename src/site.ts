@@ -27,7 +27,11 @@ export const PERSON = {
    * `10.1107/s2059798325007831` records "O. Lauzirika" while
    * `10.1109/isbi56570.2024.10635352` records "Zarrabeitia".
    *
-   * Compared case-insensitively after stripping punctuation and whitespace.
+   * Compared case-insensitively after stripping punctuation and whitespace,
+   * and always on given + family together. Surname-only forms are deliberately
+   * absent: a bare "Zarrabeitia" would also match an unrelated author with
+   * the same surname. Every Crossref record for these papers carries a given
+   * name, so nothing is lost.
    */
   nameVariants: [
     'O. L. Zarrabeitia',
@@ -36,8 +40,6 @@ export const PERSON = {
     'O. Lauzirika Zarrabeitia',
     'O. Lauzirika',
     'Oier Lauzirika',
-    'Lauzirika Zarrabeitia',
-    'Zarrabeitia',
   ],
 
   orcid: '0009-0003-7908-180X',

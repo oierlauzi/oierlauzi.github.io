@@ -1,0 +1,21 @@
+# Works with a Crossref DOI. This list is hand-owned and is the source of
+# truth for *which* works are mine; `npm run sync:publications` fetches the
+# metadata for each DOI and writes publications.generated.json.
+#
+# ORCID cannot do the discovering: it currently holds 1 of these 4, and
+# Crossref's `filter=orcid:` returns nothing because no publisher deposited
+# the ORCID. The sync reports that drift in both directions instead.
+
+- id: alignpca-2d
+  doi: 10.1107/s2059798326004572
+  type: journal
+  # Same work, open access. Linked from this entry rather than listed twice.
+  preprintDoi: 10.64898/2026.02.11.705027
+
+- id: distinguishable-classes
+  doi: 10.1107/s2059798325007831
+  type: journal
+
+- id: isbi-2024-alignment
+  doi: 10.1109/isbi56570.2024.10635352
+  type: conference

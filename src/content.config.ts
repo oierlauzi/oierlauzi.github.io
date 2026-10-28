@@ -86,6 +86,50 @@ const contributions = defineCollection({
 });
 
 /**
+ * Machine output, written only by `npm run sync:publications`. Never edit by
+ * hand — the next sync overwrites it. Titles are already sanitised there, so
+ * the page can hand them to `set:html`.
+ */
+const publications = defineCollection({
+  loader: file('src/data/publications.generated.json'),
+  schema: z.object({
+    doi: z.string(),
+    type: z.enum(['journal', 'conference']),
+    title: z.string(),
+    titleText: z.string(),
+    authors: z.array(z.object({ name: z.string(), self: z.boolean() })),
+    venue: z.string().nullable(),
+    venueShort: z.string().nullable(),
+    volume: z.string().nullable(),
+    issue: z.string().nullable(),
+    pages: z.string().nullable(),
+    year: z.string(),
+    month: z.string().nullable(),
+    publisher: z.string().nullable(),
+    url: z.string(),
+    preprintUrl: z.string().nullable(),
+  }),
+});
+
+/** Works with no Crossref DOI: the Basque-language article and the theses. */
+const publicationsExtra = defineCollection({
+  loader: file('src/data/publications-extra.yaml'),
+  schema: z.object({
+    type: z.enum(['journal', 'conference', 'thesis']),
+    title: z.string(),
+    authors: z.array(z.string()),
+    venue: z.string(),
+    /** e.g. which degree a thesis belongs to. */
+    note: z.string().optional(),
+    year: z.string(),
+    location: z.string().optional(),
+    /** BCP-47 tag of the language the work is written in. */
+    language: z.string().optional(),
+    url: z.url().optional(),
+  }),
+});
+
+/**
  * One file per project. `kind` drives the three sections on the projects page —
  * the distinction between work done for the research post, work led personally
  * in the same field, and older personal work.
@@ -138,6 +182,8 @@ export const collections = {
   skills,
   languages,
   contributions,
+  publications,
+  publicationsExtra,
   projects,
   pages,
 };

@@ -48,3 +48,31 @@ downstream hard-codes them. Dark mode re-declares the same token names. Fonts
 are self-hosted variable `woff2` files in `public/fonts/`, committed rather than
 pulled from npm or a CDN — they never need upgrading, and nothing is fetched
 from a third party at page load.
+
+## Publications
+
+The list of works is hand-owned in `src/data/publications.yaml` — one line per
+paper. `npm run sync:publications` fetches each DOI's metadata from Crossref and
+writes `src/data/publications.generated.json`, which is committed and **must not
+be edited by hand**. Works with no Crossref DOI live in
+`src/data/publications-extra.yaml` and are read directly.
+
+The site build never touches the network: it reads the committed JSON. A
+Crossref outage cannot fail a deploy, and every metadata change is reviewable in
+a diff.
+
+ORCID is used only to reconcile, in both directions:
+
+```sh
+npm run sync:publications -- --check   # exits non-zero if ORCID and the site disagree
+```
+
+It cannot be used to *discover* the list — the ORCID record is incomplete, and
+Crossref's `filter=orcid:` returns nothing because no publisher deposited the
+ORCID iD in the metadata.
+
+Behind an HTTP proxy, Node's `fetch` ignores `HTTPS_PROXY` unless you ask it to:
+
+```sh
+NODE_USE_ENV_PROXY=1 npm run sync:publications
+```
