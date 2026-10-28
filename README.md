@@ -76,3 +76,37 @@ Behind an HTTP proxy, Node's `fetch` ignores `HTTPS_PROXY` unless you ask it to:
 ```sh
 NODE_USE_ENV_PROXY=1 npm run sync:publications
 ```
+
+## PDF CVs
+
+```sh
+npm run build          # the site
+npm run build:pdf      # then the PDFs, into dist/
+```
+
+The PDFs render the **same `/{lang}/cv/` page** the site serves — there is no
+separate print template. `src/styles/print.css` decides what differs: the
+portrait appears (`.print-only`), the navigation, footer and download button do
+not (`.print-hide`), and entries flagged `inPdf: false` or bullets past
+`pdfBullets` are dropped.
+
+`build:pdf` is deliberately not part of `build`: it needs a browser, and making
+every CSS change depend on one is a poor trade. CI runs both in sequence and
+needs `npx playwright install chromium`. If your environment already ships a
+browser, point at it instead:
+
+```sh
+CHROMIUM_PATH=/path/to/chromium npm run build:pdf
+```
+
+Two things that are easy to get wrong and are handled here:
+
+- **Dark mode would produce a black PDF.** The colour tokens follow
+  `prefers-color-scheme`, and a headless browser may report dark; with
+  `printBackground: true` that yields pale text on black. `print.css` re-declares
+  the light tokens unconditionally. Verified by rendering with the browser
+  forced to dark — the page still comes out white.
+- **Page numbers cannot come from CSS.** Chromium ignores `@page` margin boxes,
+  so `counter(page)` does nothing; they come from Playwright's `footerTemplate`,
+  which is an isolated document that inherits no styles and defaults to zero
+  font-size, hence the inline style on it.

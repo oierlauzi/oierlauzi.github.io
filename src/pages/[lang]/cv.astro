@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import CvSection from '../../components/CvSection.astro';
 import CvEntry from '../../components/CvEntry.astro';
@@ -10,7 +11,10 @@ import { localePath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 import { formatDate } from '../../lib/dates';
 import { byDateDesc, byOrder, byPeriodDesc } from '../../lib/order';
+import { getPublications } from '../../lib/publications';
 import { PERSON, PROFILE_URLS } from '../../site';
+import portrait from '../../assets/portrait.jpg';
+import '../../styles/print.css';
 
 export function getStaticPaths() {
   return localePaths();
@@ -28,19 +32,34 @@ const awards = (await getCollection('awards')).sort((a, b) => byDateDesc(a.data,
 const skills = (await getCollection('skills')).sort((a, b) => byOrder(a.data, b.data));
 const languages = (await getCollection('languages')).sort((a, b) => byOrder(a.data, b.data));
 
+// The same merged list the publications page renders, so the CV cannot fall
+// out of step with it.
+const publications = await getPublications();
+
+const pdfHref = `/${PERSON.fullName.replace(/\s+/g, '-')}-CV-${locale}.pdf`;
+
 const title = t('nav.cv');
 ---
 
 <Base locale={locale} routeKey="cv" title={title} description={`${title} — ${PERSON.fullName}`}>
   <header class="cv-head">
-    <h1>{PERSON.fullName}</h1>
-    <p class="cv-head__role">{t('site.role')}</p>
-    <ul class="cv-head__contact meta">
-      <li>{PERSON.affiliation.city}, {PERSON.affiliation.country}</li>
-      <li><EmailLink /></li>
-      <li><a href={PROFILE_URLS.orcid}>ORCID</a></li>
-      <li><a href={PROFILE_URLS.github}>GitHub</a></li>
-    </ul>
+    <div class="cv-head__text">
+      <h1>{PERSON.fullName}</h1>
+      <p class="cv-head__role">{t('site.role')}</p>
+      <ul class="cv-head__contact meta">
+        <li>{PERSON.affiliation.city}, {PERSON.affiliation.country}</li>
+        <li><EmailLink /></li>
+        <li><a href={PROFILE_URLS.orcid}>ORCID</a></li>
+        <li><a href={PROFILE_URLS.github}>GitHub</a></li>
+      </ul>
+      <p class="cv-head__download print-hide">
+        <a href={pdfHref} download>{t('action.download')} (PDF)</a>
+      </p>
+    </div>
+
+    {/* Appears in the generated PDF only; on the web the portrait is already
+        on the home page, one click away. */}
+    <Image class="print-only cv-head__portrait" src={portrait} alt="" widths={[220]} loading="lazy" />
   </header>
 
   <CvSection title={t('cv.experience')} id="experience">
@@ -57,6 +76,8 @@ const title = t('nav.cv');
           distinctions={e.data.distinctions}
           bullets={e.data.bullets}
           url={e.data.url}
+          inPdf={e.data.inPdf}
+          pdfBullets={e.data.pdfBullets}
         />
       ))
     }
@@ -76,14 +97,30 @@ const title = t('nav.cv');
           distinctions={e.data.distinctions}
           bullets={e.data.bullets}
           url={e.data.url}
+          inPdf={e.data.inPdf}
+          pdfBullets={e.data.pdfBullets}
         />
       ))
     }
   </CvSection>
 
   <CvSection title={t('cv.publications')} id="publications">
-    <p class="prose">
-      <a href={localePath(locale, 'publications')}>{t('cv.publications')}</a>
+    <ol class="cv-pubs">
+      {
+        publications.map((pub) => (
+          <li class="cv-pub" lang={pub.language ?? undefined}>
+            <p class="cv-pub__title" set:html={pub.titleHtml} />
+            <p class="cv-pub__where meta">
+              {pub.venue && <em>{pub.venue}</em>}
+              {pub.detail && <> · {pub.detail}</>}
+              <> · {pub.year}</>
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="cv-pubs__more meta print-hide">
+      <a href={localePath(locale, 'publications')}>{t('cv.publications')} →</a>
     </p>
   </CvSection>
 
@@ -120,6 +157,11 @@ const title = t('nav.cv');
           unit={e.data.unit}
           location={e.data.location}
           period={e.data.period}
+          distinctions={e.data.distinctions}
+          bullets={e.data.bullets}
+          url={e.data.url}
+          inPdf={e.data.inPdf}
+          pdfBullets={e.data.pdfBullets}
         />
       ))
     }
@@ -168,6 +210,11 @@ const title = t('nav.cv');
           unit={e.data.unit}
           location={e.data.location}
           period={e.data.period}
+          distinctions={e.data.distinctions}
+          bullets={e.data.bullets}
+          url={e.data.url}
+          inPdf={e.data.inPdf}
+          pdfBullets={e.data.pdfBullets}
         />
       ))
     }
@@ -177,6 +224,57 @@ const title = t('nav.cv');
 <style>
   .cv-head {
     margin-bottom: var(--space-l);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-l);
+  }
+
+  .cv-head__text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .cv-head__portrait {
+    flex: 0 0 auto;
+    width: 28mm;
+    height: 28mm;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .cv-head__download {
+    margin-top: var(--space-s);
+    font-family: var(--sans);
+    font-size: var(--step--1);
+  }
+
+  .cv-pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: pub;
+  }
+
+  .cv-pub {
+    break-inside: avoid;
+    max-width: var(--measure);
+  }
+
+  .cv-pub + .cv-pub {
+    margin-top: var(--space-s);
+  }
+
+  .cv-pub__title {
+    font-weight: 600;
+  }
+
+  .cv-pub__where {
+    margin-top: 0.1em;
+  }
+
+  .cv-pubs__more {
+    margin-top: var(--space-s);
   }
 
   .cv-head h1 {

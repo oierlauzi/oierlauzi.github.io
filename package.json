@@ -11,7 +11,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "sync:publications": "node scripts/sync-publications.ts"
+    "sync:publications": "node scripts/sync-publications.ts",
+    "build:pdf": "node scripts/make-pdfs.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "playwright": "^1.64.1",
     "typescript": "^6.0.3",
     "yaml": "^2.9.1"
   }
