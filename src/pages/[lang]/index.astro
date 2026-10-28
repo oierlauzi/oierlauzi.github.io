@@ -1,0 +1,148 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { assertLocale } from '../../i18n/locales';
+import { localePaths } from '../../i18n/paths';
+import { localePath } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+import { getPage } from '../../lib/content';
+import { PERSON, PROFILE_URLS, SITE } from '../../site';
+import portrait from '../../assets/portrait.jpg';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const locale = assertLocale(Astro.params.lang);
+const t = useTranslations(locale);
+
+// Prefer an explicit `lead`, falling back to the bio's opening paragraph. The
+// two serve different jobs: the bio can open personally, while the landing page
+// should say what this person does.
+const about = await getPage(locale, 'about');
+const firstParagraph = (about.body ?? '').trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, ' ') ?? '';
+const lead = about.data.lead ?? firstParagraph;
+
+// Ties the site to the ORCID iD for anything crawling by name. The preferred
+// signature goes in alternateName because that is how the papers are indexed,
+// and it is not the same string as the legal name.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: PERSON.fullName,
+  alternateName: PERSON.signature,
+  givenName: PERSON.givenName,
+  familyName: PERSON.familyName,
+  jobTitle: t('site.role'),
+  affiliation: {
+    '@type': 'Organization',
+    name: PERSON.affiliation.institution,
+    department: { '@type': 'Organization', name: PERSON.affiliation.unit },
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: PERSON.affiliation.city,
+    addressCountry: PERSON.affiliation.country,
+  },
+  url: SITE.url,
+  identifier: PROFILE_URLS.orcid,
+  sameAs: [PROFILE_URLS.orcid, PROFILE_URLS.github],
+  knowsLanguage: ['eu', 'es', 'en'],
+};
+
+const links = [
+  { key: 'cv', href: localePath(locale, 'cv'), label: t('nav.cv') },
+  { key: 'publications', href: localePath(locale, 'publications'), label: t('nav.publications') },
+  { key: 'projects', href: localePath(locale, 'projects'), label: t('nav.projects') },
+];
+---
+
+<Base locale={locale} routeKey="home" description={about.data.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <div class="hero">
+    <div class="hero__text">
+      <h1>{PERSON.fullName}</h1>
+      <p class="hero__role">{t('site.role')}</p>
+      <p class="hero__lead">{lead}</p>
+      <p class="hero__more">
+        <a href={localePath(locale, 'about')}>{t('nav.about')}</a>
+      </p>
+      <ul class="hero__links meta">
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </div>
+
+    <Image
+      class="hero__portrait"
+      src={portrait}
+      alt={PERSON.fullName}
+      widths={[160, 240, 320]}
+      sizes="(max-width: 34rem) 160px, 240px"
+      loading="eager"
+    />
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    gap: var(--space-l);
+    margin-top: var(--space-l);
+  }
+
+  .hero__text {
+    flex: 1 1 22rem;
+  }
+
+  .hero h1 {
+    font-size: var(--step-3);
+  }
+
+  .hero__role {
+    margin-top: var(--space-xs);
+    font-family: var(--sans);
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+
+  .hero__lead {
+    margin-top: var(--space-m);
+    max-width: var(--measure);
+  }
+
+  .hero__more {
+    margin-top: var(--space-xs);
+    font-size: var(--step--1);
+  }
+
+  .hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-l);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--rule);
+  }
+
+  .hero__portrait {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+
+  @media (min-width: 34rem) {
+    .hero__portrait {
+      width: 240px;
+      height: 240px;
+    }
+  }
+</style>

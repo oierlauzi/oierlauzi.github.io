@@ -1,0 +1,53 @@
+# Training scholarships and student internships.
+
+- id: summer-at-simons
+  title:
+    en: Summer at Simons research internship
+    es: Estancia de investigación Summer at Simons
+    eu: Summer at Simons ikerketa-egonaldia
+  organisation: Flatiron Institute, Simons Foundation
+  unit: Center for Computational Biology
+  location: New York
+  period:
+    start: '2026'
+    end: '2026'
+  bullets:
+    - en: Ten-week summer research placement
+      es: Estancia de investigación de verano de diez semanas
+      eu: Udako hamar asteko ikerketa-egonaldia
+
+- id: jae-intro
+  title:
+    en: CSIC JAE-Intro Severo Ochoa y María de Maeztu scholarship
+    es: Beca CSIC JAE-Intro Severo Ochoa y María de Maeztu
+    eu: CSIC JAE-Intro Severo Ochoa y María de Maeztu beka
+  organisation: Centro Nacional de Biotecnología (CNB-CSIC)
+  unit: Biocomputing Unit
+  location: Madrid
+  period:
+    start: '2021'
+    end: '2022'
+
+- id: mefp-collaboration
+  title:
+    en: Training internship for student collaboration in university departments
+    es: Beca de colaboración de estudiantes en departamentos universitarios
+    eu: Unibertsitate-saileko ikasleen lankidetza-beka
+  organisation: Ministerio de Educación y Formación Profesional
+  unit: GAMMA, CITSEM-UPM
+  location: Madrid
+  period:
+    start: '2020'
+    end: '2021'
+
+- id: upm-collaboration
+  title:
+    en: UPM training internship for student collaboration in departments
+    es: Beca UPM de colaboración de estudiantes en departamentos
+    eu: UPM-ko saileko ikasleen lankidetza-beka
+  organisation: Universidad Politécnica de Madrid
+  unit: GAMMA, CITSEM-UPM
+  location: Madrid
+  period:
+    start: '2019'
+    end: '2020'

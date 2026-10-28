@@ -1,0 +1,39 @@
+- id: programming
+  order: 1
+  label:
+    en: Programming languages
+    es: Lenguajes de programación
+    eu: Programazio-lengoaiak
+  items: [C/C++, Python, CUDA]
+  note:
+    en: C/C++ at an advanced level
+    es: C/C++ a nivel avanzado
+    eu: C/C++ maila aurreratuan
+
+- id: cryoem
+  order: 2
+  label:
+    en: Cryo-EM and Cryo-ET image processing
+    es: Procesado de imagen en Cryo-EM y Cryo-ET
+    eu: Cryo-EM eta Cryo-ET irudi-prozesaketa
+  items: [Scipion, Relion, Xmipp, CryoSPARC, EMAN, Imod, Topaz]
+
+- id: systems
+  order: 3
+  label:
+    en: Systems
+    es: Sistemas
+    eu: Sistemak
+  items: [GNU/Linux, HPC]
+  note:
+    en: Daily GNU/Linux user since 2012, with sysadmin experience on Linux infrastructure
+    es: Usuario diario de GNU/Linux desde 2012, con experiencia de administración en infraestructura Linux
+    eu: 2012az geroztik eguneroko GNU/Linux erabiltzailea, Linux azpiegituran administratzaile-esperientziarekin
+
+- id: tools
+  order: 4
+  label:
+    en: Other tools
+    es: Otras herramientas
+    eu: Beste tresna batzuk
+  items: [CMake, Git, GitHub Actions, LaTeX]

@@ -1,0 +1,90 @@
+/*
+ * Design tokens — "quiet academic".
+ *
+ * Ivory paper, ink text, hairline rules, one muted oxblood accent. Everything
+ * else in the site reads from these; no component hard-codes a colour or a
+ * font size. Dark mode re-declares the same names, so nothing downstream has
+ * to know which theme is active.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- colour ---------------------------------------------------------- */
+  --paper: #fbfaf7;
+  --paper-sunk: #f3f1ec;
+  --ink: #1a1a1a;
+  --ink-soft: #3c3935;
+  --muted: #6b6560;
+  --rule: #e0dcd5;
+  --rule-strong: #c9c3ba;
+  --accent: #7a2e1e;
+  --accent-strong: #5c2016;
+  --selection: #e9ded3;
+
+  /* ---- type ------------------------------------------------------------ */
+  --serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Fluid modular scale, roughly 1.25 at desktop. */
+  --step--2: clamp(0.72rem, 0.70rem + 0.10vw, 0.78rem);
+  --step--1: clamp(0.84rem, 0.81rem + 0.15vw, 0.92rem);
+  --step-0: clamp(1rem, 0.97rem + 0.18vw, 1.0625rem);
+  --step-1: clamp(1.2rem, 1.13rem + 0.35vw, 1.4rem);
+  --step-2: clamp(1.45rem, 1.32rem + 0.65vw, 1.85rem);
+  --step-3: clamp(1.75rem, 1.52rem + 1.15vw, 2.45rem);
+  --step-4: clamp(2.1rem, 1.70rem + 2.0vw, 3.25rem);
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.65;
+
+  /* ---- space ----------------------------------------------------------- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1.25rem;
+  --space-l: 2rem;
+  --space-xl: 3.25rem;
+  --space-2xl: 5rem;
+
+  /* ---- layout ---------------------------------------------------------- */
+  --measure: 68ch;
+  --page-max: 46rem;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+
+  --focus-ring: 2px solid var(--accent);
+  --focus-offset: 3px;
+}
+
+/*
+ * Dark mode. Guarded with :not([data-theme="light"]) so an explicit light
+ * preference always wins over the OS setting, and repeated under an explicit
+ * [data-theme="dark"] for when a toggle is added.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #14120f;
+    --paper-sunk: #1c1915;
+    --ink: #e8e4dc;
+    --ink-soft: #cdc7bd;
+    --muted: #9b948b;
+    --rule: #2e2a25;
+    --rule-strong: #46403a;
+    --accent: #d8947d;
+    --accent-strong: #eab39f;
+    --selection: #3a2c25;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #14120f;
+  --paper-sunk: #1c1915;
+  --ink: #e8e4dc;
+  --ink-soft: #cdc7bd;
+  --muted: #9b948b;
+  --rule: #2e2a25;
+  --rule-strong: #46403a;
+  --accent: #d8947d;
+  --accent-strong: #eab39f;
+  --selection: #3a2c25;
+}

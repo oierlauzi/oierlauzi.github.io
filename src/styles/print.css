@@ -1,0 +1,109 @@
+/*
+ * Print rules for the CV page. The generated PDFs render this exact page, so
+ * there is no separate print route to keep in sync — what changes between the
+ * screen and the PDF is expressed here.
+ */
+
+@media print {
+  /*
+   * Force the light palette unconditionally.
+   *
+   * The tokens follow prefers-color-scheme, and a CI runner's headless Chromium
+   * may well report dark. Combined with printBackground: true that would render
+   * a black page with pale text — a PDF nobody can print. This overrides both
+   * the media query and an explicit [data-theme="dark"].
+   */
+  :root,
+  :root[data-theme='dark'] {
+    --paper: #ffffff;
+    --paper-sunk: #ffffff;
+    --ink: #111111;
+    --ink-soft: #333333;
+    --muted: #555555;
+    --rule: #cccccc;
+    --rule-strong: #999999;
+    --accent: #7a2e1e;
+    color-scheme: light;
+  }
+
+  @page {
+    size: A4;
+    /* Margins come from Playwright's pdf() options, because the footer
+       template is drawn inside the page margin and needs the room reserved
+       there. Setting them here as well would fight that. */
+  }
+
+  html {
+    font-size: 10.5pt;
+  }
+
+  body {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  /* Chrome that belongs to the website, not to the document. */
+  .print-hide,
+  header.masthead,
+  footer.colophon,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Content that belongs to the document, not to the website.
+     Explicitly block rather than `revert`: revert would fall back to the UA
+     default (inline for an img), discarding the `display: block` the global
+     reset sets, which quietly breaks the portrait's layout. */
+  .print-only {
+    display: block !important;
+  }
+
+  .page {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  main {
+    padding-block: 0;
+  }
+
+  /* Keep a record together, and never strand a heading at a page foot. */
+  .entry,
+  .award,
+  .pub,
+  .skills__group {
+    break-inside: avoid;
+  }
+
+  .section-label {
+    break-after: avoid;
+    margin-block: 1.4em 0.5em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /*
+   * Links stay live in the PDF — Chromium keeps the anchors — so the URL is
+   * not appended in parentheses after every one. Printing
+   * "(https://orcid.org/0009-0003-7908-180X)" beside each link would cost more
+   * legibility than it buys on a document that is usually read on screen.
+   */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Tighter rhythm than the screen: paper has no scroll. */
+  .cv-section {
+    margin: 0;
+  }
+}
+
+/* Off-screen until print. Declared outside the media query so it applies. */
+.print-only {
+  display: none;
+}

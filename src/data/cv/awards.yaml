@@ -1,0 +1,72 @@
+- id: best-record-msc-electronic
+  title:
+    en: Best academic record of my cohort
+    es: Mejor expediente académico de mi promoción
+    eu: Nire promozioko espediente akademiko onena
+  context:
+    en: M.Sc. in Electronic Systems Engineering
+    es: Máster Universitario en Ingeniería de Sistemas Electrónicos
+    eu: Sistema Elektronikoen Ingeniaritzako Unibertsitate Masterra
+  organisation: ETSIT-UPM
+  date: '2024'
+
+- id: best-record-msc-telecom
+  title:
+    en: Best academic record in the Electronics specialty
+    es: Mejor expediente académico de la especialidad de Electrónica
+    eu: Elektronika espezialitateko espediente akademiko onena
+  context:
+    en: M.Sc. in Telecommunications Engineering
+    es: Máster Universitario en Ingeniería de Telecomunicación
+    eu: Telekomunikazio Ingeniaritzako Unibertsitate Masterra
+  organisation: ETSIT-UPM
+  date: '2023'
+
+- id: best-record-bsc
+  title:
+    en: Best academic record of my cohort
+    es: Mejor expediente académico de mi promoción
+    eu: Nire promozioko espediente akademiko onena
+  context:
+    en: B.Sc. in Sound and Image Engineering
+    es: Grado en Ingeniería de Sonido e Imagen
+    eu: Soinu eta Irudi Ingeniaritzako Gradua
+  organisation: ETSIST-UPM
+  date: '2021'
+
+- id: flatiron-poster
+  title:
+    en: Best student poster
+    es: Mejor póster estudiantil
+    eu: Ikasleen posterrik onena
+  context:
+    en: Computational Cryo-EM Workshop, Flatiron Institute
+    es: Computational Cryo-EM Workshop, Flatiron Institute
+    eu: Computational Cryo-EM Workshop, Flatiron Institute
+  organisation: Physical Review X — American Physical Society
+  location: New York
+  date: '2025'
+
+- id: cusl-xiii-multimedia
+  title:
+    en: Best multimedia project
+    es: Mejor proyecto multimedia
+    eu: Proiektu multimedia onena
+  context:
+    en: Concurso Universitario de Software Libre (CUSL) XIII
+    es: Concurso Universitario de Software Libre (CUSL) XIII
+    eu: Concurso Universitario de Software Libre (CUSL) XIII
+  date: '2019'
+  url: https://concursosoftwarelibre.org/1819/node/38.html
+
+- id: cusl-xv-mention
+  title:
+    en: Honourable mention
+    es: Mención de honor
+    eu: Ohorezko aipamena
+  context:
+    en: Concurso Universitario de Software Libre (CUSL) XV
+    es: Concurso Universitario de Software Libre (CUSL) XV
+    eu: Concurso Universitario de Software Libre (CUSL) XV
+  date: '2021'
+  url: https://concursosoftwarelibre.org/2021/node/38.html

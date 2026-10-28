@@ -1,0 +1,22 @@
+# Upstream projects contributed to but not led. Kept separate from `projects`
+# so a contribution is never presented as something authored.
+
+- id: xmipp
+  order: 1
+  name: Xmipp
+  url: https://github.com/I2PC/xmipp3
+  role: { en: Contributor, es: Colaborador, eu: Laguntzailea }
+  summary:
+    en: Suite of image processing programs for single-particle 3D electron microscopy
+    es: Conjunto de programas de procesado de imagen para microscopía electrónica 3D de partícula única
+    eu: Partikula bakarreko 3D mikroskopia elektronikorako irudi-prozesaketa programa multzoa
+
+- id: scipion
+  order: 2
+  name: Scipion
+  url: https://github.com/scipion-em/scipion-app
+  role: { en: Contributor, es: Colaborador, eu: Laguntzailea }
+  summary:
+    en: Integration framework for image processing workflows in electron microscopy
+    es: Marco de integración para flujos de procesado de imagen en microscopía electrónica
+    eu: Mikroskopia elektronikoko irudi-prozesaketa fluxuetarako integrazio-markoa

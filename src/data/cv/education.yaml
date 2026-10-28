@@ -1,0 +1,71 @@
+# Degrees. Academic marks and honours-subject counts are deliberately omitted;
+# the distinctions below carry the same information without reading as a
+# student transcript. Dates are quoted so YAML keeps them as strings.
+
+- id: phd
+  title:
+    en: PhD in Computer Science and Telecommunication Engineering
+    es: Programa de Doctorado en Ingeniería Informática y Telecomunicación
+    eu: Informatika eta Telekomunikazio Ingeniaritzako Doktoretza Programa
+  organisation: Universidad Autónoma de Madrid
+  location: Madrid
+  period:
+    start: '2024-10'
+    end: null
+
+- id: msc-electronic-systems
+  title:
+    en: M.Sc. in Electronic Systems Engineering
+    es: Máster Universitario en Ingeniería de Sistemas Electrónicos
+    eu: Sistema Elektronikoen Ingeniaritzako Unibertsitate Masterra
+  organisation: Universidad Politécnica de Madrid
+  unit: ETSIT
+  location: Madrid
+  period:
+    start: '2021-09'
+    end: '2024-02'
+  distinctions:
+    - en: Best academic record of my cohort
+      es: Mejor expediente académico de mi promoción
+      eu: Nire promozioko espediente akademiko onena
+    - en: Maximum grade in the Master’s Thesis
+      es: Calificación máxima en el Trabajo Fin de Máster
+      eu: Gehienezko kalifikazioa Master Amaierako Lanean
+
+- id: msc-telecommunications
+  title:
+    en: M.Sc. in Telecommunications Engineering
+    es: Máster Universitario en Ingeniería de Telecomunicación
+    eu: Telekomunikazio Ingeniaritzako Unibertsitate Masterra
+  organisation: Universidad Politécnica de Madrid
+  unit: ETSIT
+  location: Madrid
+  period:
+    start: '2021-09'
+    end: '2023-07'
+  distinctions:
+    - en: Best academic record in the Electronics specialty
+      es: Mejor expediente académico de la especialidad de Electrónica
+      eu: Elektronika espezialitateko espediente akademiko onena
+    - en: Maximum grade in the Master’s Thesis
+      es: Calificación máxima en el Trabajo Fin de Máster
+      eu: Gehienezko kalifikazioa Master Amaierako Lanean
+
+- id: bsc-sound-image
+  title:
+    en: B.Sc. in Sound and Image Engineering
+    es: Grado en Ingeniería de Sonido e Imagen
+    eu: Soinu eta Irudi Ingeniaritzako Gradua
+  organisation: Universidad Politécnica de Madrid
+  unit: ETSIST
+  location: Madrid
+  period:
+    start: '2017-09'
+    end: '2021-07'
+  distinctions:
+    - en: Best academic record of my cohort
+      es: Mejor expediente académico de mi promoción
+      eu: Nire promozioko espediente akademiko onena
+    - en: Maximum grade and honours in the Bachelor’s Thesis
+      es: Calificación máxima y matrícula de honor en el Trabajo Fin de Grado
+      eu: Gehienezko kalifikazioa eta ohorezko matrikula Gradu Amaierako Lanean

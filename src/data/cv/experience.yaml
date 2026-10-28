@@ -1,0 +1,53 @@
+# Research posts. The PhD also appears in education.yaml — the degree (UAM) and
+# the research post (CNB-CSIC) are different facts about the same period, and
+# the source CV splits them the same way.
+
+- id: phd-researcher
+  title:
+    en: PhD student
+    es: Doctorando
+    eu: Doktoregaia
+  organisation: Centro Nacional de Biotecnología (CNB-CSIC)
+  unit: Biocomputing Unit
+  location: Madrid
+  period:
+    start: '2024-10'
+    end: null
+  distinctions:
+    - en: “la Caixa” Foundation INPhINIT 2024 Fellow
+      es: Becario INPhINIT 2024 de la Fundación “la Caixa”
+      eu: “la Caixa” Fundazioaren INPhINIT 2024 bekaduna
+  bullets:
+    - en: Development of FactorEM, a fast and robust heterogeneity analysis algorithm for Cryo-EM
+      es: Desarrollo de FactorEM, un algoritmo rápido y robusto de análisis de heterogeneidad para Cryo-EM
+      eu: FactorEM garatzea, Cryo-EM-erako heterogeneotasun-analisi algoritmo azkar eta sendo bat
+    - en: Development of novel particle picking strategies for Cryo-ET
+      es: Desarrollo de nuevas estrategias de selección de partículas para Cryo-ET
+      eu: Cryo-ET-erako partikulak hautatzeko estrategia berriak garatzea
+    - en: Development of ab-initio reconstruction algorithms for Cryo-ET
+      es: Desarrollo de algoritmos de reconstrucción ab-initio para Cryo-ET
+      eu: Cryo-ET-erako ab-initio berreraikuntza algoritmoak garatzea
+  pdfBullets: 3
+
+- id: technical-staff
+  title:
+    en: Technical staff
+    es: Personal técnico
+    eu: Langile teknikoa
+  organisation: Centro Nacional de Biotecnología (CNB-CSIC)
+  unit: Biocomputing Unit
+  location: Madrid
+  period:
+    start: '2022'
+    end: '2024'
+  bullets:
+    - en: HPC and GNU/Linux systems administration
+      es: Administración de sistemas HPC y GNU/Linux
+      eu: HPC eta GNU/Linux sistemen administrazioa
+    - en: Maintenance of the Xmipp3 software package
+      es: Mantenimiento del paquete de software Xmipp3
+      eu: Xmipp3 software paketearen mantentze-lana
+    - en: Development of fast image alignment algorithms
+      es: Desarrollo de algoritmos rápidos de alineamiento de imágenes
+      eu: Irudiak lerrokatzeko algoritmo azkarrak garatzea
+  pdfBullets: 3

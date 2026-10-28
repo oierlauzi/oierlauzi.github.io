@@ -1,0 +1,101 @@
+---
+import type { Locale } from '../i18n/locales';
+import { localePath, NAV_ORDER, type RouteKey } from '../i18n/routes';
+import { useTranslations, type UIStrings } from '../i18n/ui';
+import { PERSON } from '../site';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  rest?: string[];
+}
+
+const { locale, routeKey, rest = [] } = Astro.props;
+const t = useTranslations(locale);
+
+const navItems = NAV_ORDER.map((key) => ({
+  key,
+  href: localePath(locale, key),
+  label: t(`nav.${key}` as keyof UIStrings),
+  current: key === routeKey,
+}));
+---
+
+<header class="masthead">
+  <div class="page masthead__inner">
+    <a class="masthead__name" href={localePath(locale, 'home')}>{PERSON.fullName}</a>
+    <LanguageSwitcher locale={locale} routeKey={routeKey} rest={rest} />
+  </div>
+
+  <nav class="page masthead__nav" aria-label={t('nav.home')}>
+    <ul>
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding-block: var(--space-m) 0;
+  }
+
+  .masthead__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s) var(--space-m);
+  }
+
+  .masthead__name {
+    font-family: var(--serif);
+    font-size: var(--step-0);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .masthead__nav {
+    margin-top: var(--space-s);
+  }
+
+  .masthead__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* Tight row gap so a nav that wraps on narrow screens stays compact. */
+    gap: 0 var(--space-m);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .masthead__nav a {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: var(--step--1);
+    color: var(--muted);
+    text-decoration: none;
+    padding-block: var(--space-xs);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+
+  .masthead__nav a:hover {
+    color: var(--ink);
+  }
+
+  .masthead__nav a[aria-current='page'] {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+</style>

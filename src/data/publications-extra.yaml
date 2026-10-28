@@ -1,0 +1,55 @@
+# Works with no Crossref DOI, written out by hand. Read directly by the site;
+# the sync script never touches this file.
+
+- id: ikergazte-2025
+  type: conference
+  title: Heterogeneotasunaren analisi azkar eta automatizatua krio-mikroskopia elektronikoan
+  # Initialised to match the Crossref-sourced entries, which all use initials.
+  # The full names are J. L. Vilas, M. Iceta, J. M. Carazo, C. O. S. Sorzano.
+  authors:
+    - Oier Lauzirika
+    - J. L. Vilas
+    - M. Iceta
+    - J. M. Carazo
+    - C. O. S. Sorzano
+  venue: Ikergazte
+  note: 109–116
+  year: '2025'
+  location: Bilbao
+  language: eu
+  url: https://aldizkariak.ueu.eus/index.php/ikergazte/article/view/5911
+
+- id: msc-thesis-classification
+  type: thesis
+  title: Development of novel 3D classification methods for Cryo-Electron Microscopy
+  authors:
+    - Oier Lauzirika Zarrabeitia
+  venue: Universidad Politécnica de Madrid
+  note: M.Sc. in Electronic Systems Engineering
+  year: '2024'
+  language: en
+  url: https://oa.upm.es/85104/
+
+- id: msc-thesis-alignment
+  type: thesis
+  title: Development of a fast image alignment algorithm for Cryo-Electron Microscopy
+  authors:
+    - Oier Lauzirika Zarrabeitia
+  venue: Universidad Politécnica de Madrid
+  note: M.Sc. in Telecommunications Engineering
+  year: '2023'
+  language: en
+  url: https://oa.upm.es/75340/
+
+# The bachelor's thesis is Cenital: the vision mixer that later became the
+# archived project of the same name.
+- id: bsc-thesis-vision-mixer
+  type: thesis
+  title: Design and implementation of a software-based vision mixer
+  authors:
+    - Oier Lauzirika Zarrabeitia
+  venue: Universidad Politécnica de Madrid
+  note: B.Sc. in Sound and Image Engineering
+  year: '2021'
+  language: en
+  url: https://oa.upm.es/70422/

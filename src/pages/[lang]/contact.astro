@@ -1,0 +1,75 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailLink from '../../components/EmailLink.astro';
+import { assertLocale } from '../../i18n/locales';
+import { localePaths } from '../../i18n/paths';
+import { useTranslations } from '../../i18n/ui';
+import { PERSON, PROFILE_URLS } from '../../site';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const locale = assertLocale(Astro.params.lang);
+const t = useTranslations(locale);
+const title = t('nav.contact');
+---
+
+<Base locale={locale} routeKey="contact" title={title} description={`${title} — ${PERSON.fullName}`}>
+  <h1>{title}</h1>
+
+  <div class="contact prose">
+    <address class="contact__address">
+      <strong>{PERSON.fullName}</strong><br />
+      {PERSON.affiliation.unit}<br />
+      {PERSON.affiliation.institution}<br />
+      {PERSON.affiliation.city}, {PERSON.affiliation.country}
+    </address>
+
+    <dl class="contact__links">
+      <div>
+        <dt>Email</dt>
+        <dd><EmailLink /></dd>
+      </div>
+      <div>
+        <dt>ORCID</dt>
+        <dd><a href={PROFILE_URLS.orcid}>{PERSON.orcid}</a></dd>
+      </div>
+      <div>
+        <dt>GitHub</dt>
+        <dd><a href={PROFILE_URLS.github}>{PERSON.github}</a></dd>
+      </div>
+    </dl>
+  </div>
+</Base>
+
+<style>
+  .contact {
+    margin-top: var(--space-m);
+  }
+
+  .contact__address {
+    font-style: normal;
+    line-height: var(--leading-normal);
+  }
+
+  .contact__links {
+    margin-top: var(--space-l);
+  }
+
+  .contact__links > div + div {
+    margin-top: var(--space-s);
+  }
+
+  .contact__links dt {
+    font-family: var(--sans);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .contact__links dd {
+    margin: 0;
+  }
+</style>
