@@ -90,6 +90,12 @@ portrait appears (`.print-only`), the navigation, footer and download button do
 not (`.print-hide`), and entries flagged `inPdf: false` or bullets past
 `pdfBullets` are dropped.
 
+The script serves `dist/` from inside its own process rather than shelling out
+to `astro preview`, which in Astro 7 always daemonises: the command returns 0
+as soon as it has handed off to a detached server, so there is nothing to wait
+on, nothing to kill, and its failures go to Astro's log rather than the
+script's stderr.
+
 `build:pdf` is deliberately not part of `build`: it needs a browser, and making
 every CSS change depend on one is a poor trade. CI runs both in sequence and
 needs `npx playwright install chromium`. If your environment already ships a

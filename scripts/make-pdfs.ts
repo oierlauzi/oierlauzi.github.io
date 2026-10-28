@@ -11,48 +11,85 @@
  * CI runs both steps in sequence.
  */
 
-import { spawn, type ChildProcess } from 'node:child_process';
+import { createServer, type Server } from 'node:http';
+import { createReadStream } from 'node:fs';
 import { readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { dirname, extname, resolve, sep } from 'node:path';
 import { chromium } from 'playwright';
 import { LOCALES } from '../src/i18n/locales.ts';
 import { PERSON } from '../src/site.ts';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = resolve(root, 'dist');
-const PORT = 4330;
-const ORIGIN = `http://127.0.0.1:${PORT}`;
+
+const CONTENT_TYPES: Record<string, string> = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2',
+  '.webp': 'image/webp',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.png': 'image/png',
+  '.ico': 'image/x-icon',
+  '.pdf': 'application/pdf',
+};
 
 function fileNameFor(locale: string): string {
   return `${PERSON.fullName.replace(/\s+/g, '-')}-CV-${locale}.pdf`;
 }
 
-async function waitForServer(url: string, timeoutMs = 30_000): Promise<void> {
-  const deadline = Date.now() + timeoutMs;
-  while (Date.now() < deadline) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) return;
-    } catch {
-      /* not up yet */
-    }
-    await new Promise((r) => setTimeout(r, 300));
-  }
-  throw new Error(`Preview server did not start at ${url} within ${timeoutMs}ms`);
-}
-
 /**
- * `file://` is not an option: the page references /fonts/… and /_astro/… by
- * absolute path, which would resolve against the filesystem root.
+ * Serves dist/ from inside this process.
+ *
+ * `astro preview` is not usable here: in Astro 7 it always daemonises. The
+ * command returns 0 as soon as it has handed off to a detached server, so
+ * there is nothing to wait on and nothing to kill, and the detached server's
+ * own failures go to Astro's log rather than to this script's stderr. That is
+ * exactly how the first CI run failed, with a 30s timeout and no diagnostic.
+ *
+ * Owning the server instead means startup is awaited rather than polled,
+ * shutdown is certain, and the bind address is explicit.
  */
-function startPreview(): ChildProcess {
-  const child = spawn('npx', ['astro', 'preview', '--port', String(PORT)], {
-    cwd: root,
-    stdio: ['ignore', 'pipe', 'pipe'],
+function startServer(): Promise<{ server: Server; origin: string }> {
+  const server = createServer((req, res) => {
+    const path = decodeURIComponent((req.url ?? '/').split('?')[0] ?? '/');
+    // Directory URLs map to their index.html, matching the built output.
+    const relative = path.endsWith('/') ? `${path}index.html` : path;
+    const file = resolve(DIST, `.${relative}`);
+
+    // Refuse anything escaping dist/, even though the only client here is a
+    // browser this script drives itself.
+    if (file !== DIST && !file.startsWith(DIST + sep)) {
+      res.writeHead(403).end('Forbidden');
+      return;
+    }
+
+    const type = CONTENT_TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream';
+    const stream = createReadStream(file);
+    stream.on('error', () => res.writeHead(404).end('Not found'));
+    stream.on('open', () => {
+      res.writeHead(200, { 'Content-Type': type });
+      stream.pipe(res);
+    });
   });
-  child.stderr?.on('data', (d) => process.stderr.write(`  [preview] ${d}`));
-  return child;
+
+  return new Promise((resolveStart, rejectStart) => {
+    server.on('error', rejectStart);
+    // Port 0: the OS picks a free one, so there is no port to collide over.
+    server.listen(0, '127.0.0.1', () => {
+      const address = server.address();
+      if (address === null || typeof address === 'string') {
+        rejectStart(new Error('Server did not bind to a TCP port'));
+        return;
+      }
+      resolveStart({ server, origin: `http://127.0.0.1:${address.port}` });
+    });
+  });
 }
 
 async function main(): Promise<void> {
@@ -61,7 +98,7 @@ async function main(): Promise<void> {
   });
   if (!entries.includes('en')) throw new Error('dist/ looks incomplete — run `npm run build` first.');
 
-  const server = startPreview();
+  const { server, origin } = await startServer();
   // CHROMIUM_PATH lets an environment that already ships a browser use it
   // instead of Playwright's own download. CI leaves it unset and relies on
   // `npx playwright install chromium`.
@@ -71,8 +108,6 @@ async function main(): Promise<void> {
   });
 
   try {
-    await waitForServer(`${ORIGIN}/en/cv/`);
-
     // colorScheme light is a second guard beside print.css: the tokens follow
     // prefers-color-scheme, and a headless browser reporting dark would
     // otherwise render pale text on black once printBackground is on.
@@ -80,7 +115,7 @@ async function main(): Promise<void> {
 
     for (const locale of LOCALES) {
       const page = await context.newPage();
-      await page.goto(`${ORIGIN}/${locale}/cv/`, { waitUntil: 'networkidle' });
+      await page.goto(`${origin}/${locale}/cv/`, { waitUntil: 'networkidle' });
 
       // Without this the PDF silently falls back to Georgia: the woff2 files
       // are still in flight when pdf() captures the layout.
@@ -111,7 +146,7 @@ async function main(): Promise<void> {
     }
   } finally {
     await browser.close();
-    server.kill();
+    await new Promise<void>((done) => server.close(() => done()));
   }
 
   console.log(`\nWrote ${LOCALES.length} PDFs to dist/`);
