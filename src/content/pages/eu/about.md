@@ -12,9 +12,9 @@ ikerketa Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoei buruzkoa da.
 Lehen aldiz 2021ean iritsi nintzen unitatera, JAE Intro beka batekin. Geroago
 langile tekniko gisa kontratatu ninduten, Xmipp3 paketea eta kalkulu-azpiegitura
 mantentzen laguntzeko. Hori baino lehen Madrilgo Unibertsitate Politeknikoan
-ikasi nuen. Lehenik Soinu eta Irudi Ingeniaritzako Gradua, eta ondoren bi
-master, bata Telekomunikazio Ingeniaritzan eta bestea Sistema Elektronikoen
-Ingeniaritzan.
+ikasi nuen, non lehenik Soinu eta Irudi Ingeniaritzako Gradua egin nuen, eta
+ondoren bi master, bata Telekomunikazio Ingeniaritzan eta bestea Sistema
+Elektronikoen Ingeniaritzan.
 
 Ez nintzen biologiatik iritsi biologia estrukturalera, bideotik eta ordenagailu
 bidezko grafikoetatik baizik. Nire gradu amaierako lana *Cenital* izeneko

@@ -11,9 +11,9 @@ research is on image processing methods for Cryo-EM and Cryo-ET.
 
 I first came to the unit in 2021, on a JAE Intro fellowship. Later I was hired
 as technical staff, to help maintain the Xmipp3 package and the compute
-infrastructure. Before that I studied at the Universidad Politécnica de Madrid.
-I took a degree in Sound and Image Engineering first, then two master's degrees,
-in Telecommunications Engineering and in Electronic Systems Engineering.
+infrastructure. Before that I studied at the Universidad Politécnica de Madrid, where I took a
+degree in Sound and Image Engineering first, then two master's degrees, in
+Telecommunications Engineering and in Electronic Systems Engineering.
 
 I did not come to structural biology from biology, but from video and computer
 graphics. My bachelor's thesis was a software video mixer called *Cenital*. It

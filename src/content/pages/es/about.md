@@ -12,9 +12,9 @@ de procesado de imagen para Cryo-EM y Cryo-ET.
 Llegué a la unidad por primera vez en 2021, con una beca JAE Intro. Más tarde me
 contrataron como personal técnico, para ayudar a mantener el paquete Xmipp3 y la
 infraestructura de cálculo. Antes de eso estudié en la Universidad Politécnica
-de Madrid. Primero el Grado en Ingeniería de Sonido e Imagen, y después dos
-másteres, en Ingeniería de Telecomunicación y en Ingeniería de Sistemas
-Electrónicos.
+de Madrid, donde cursé primero el Grado en Ingeniería de Sonido e Imagen y
+después dos másteres, en Ingeniería de Telecomunicación y en Ingeniería de
+Sistemas Electrónicos.
 
 No llegué a la biología estructural desde la biología, sino desde el vídeo y los
 gráficos por ordenador. Mi trabajo de fin de grado fue un mezclador de vídeo por
