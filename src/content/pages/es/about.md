@@ -4,15 +4,16 @@ description: "Doctorando en la Biocomputing Unit del CNB-CSIC, trabajando en pro
 lead: "Soy doctorando en la Biocomputing Unit del CNB-CSIC, bajo la supervisión del Prof. Carlos Óscar Sorzano y de José Luis Vilas. Desarrollo métodos de procesado de imagen para Cryo-EM y Cryo-ET."
 ---
 
-Crecí en Gernika-Lumo, en Bizkaia, y ahora vivo en Madrid. Soy doctorando en la
-Biocomputing Unit (BCU) del Centro Nacional de Biotecnología (CNB-CSIC) gracias
-a una beca INPhINIT de la Fundación “la Caixa”. Mi investigación se centra en el
-desarrollo de métodos de procesado de imagen para Cryo-EM y Cryo-ET.
+Crecí en Gernika-Lumo, en Bizkaia, aunque ahora vivo en Madrid. Actualmente soy
+estudiante de doctorado en la Biocomputing Unit (BCU) del Centro Nacional de
+Biotecnología (CNB-CSIC) gracias a una beca INPhINIT de la Fundación “la Caixa”.
+Mi investigación se centra en el desarrollo de métodos de procesado de imagen
+para Cryo-EM y Cryo-ET.
 
 Llegué al BCU por primera vez en 2021, con una beca JAE Intro. Más tarde me
 contrataron como personal técnico, para ayudar a mantener el paquete Xmipp3 y la
-infraestructura de cálculo. Antes de eso estudié en la Universidad Politécnica
-de Madrid, donde cursé primero el Grado en Ingeniería de Sonido e Imagen y
+infraestructura de cómputo. Antes de eso estudié en la Universidad Politécnica
+de Madrid, donde primero cursé el Grado en Ingeniería de Sonido e Imagen y
 después dos másteres, en Ingeniería de Telecomunicación y en Ingeniería de
 Sistemas Electrónicos.
 
@@ -27,9 +28,9 @@ una interpretación geométrica, algo que puedo imaginar y representar, no solo
 calcular.
 
 Fuera del trabajo soy aficionado al ferrocarril. Soy voluntario en la Asociación
-de Amigos del Ferrocarril de Madrid, donde ayudo en lo que puedo a conservar y
-hacer circular el *Tren de los 80*. La electrónica y los ordenadores antiguos
-son otra debilidad, sobre todo las estaciones de trabajo RISC de los noventa.
-Por eso tengo una pequeña colección de máquinas Silicon Graphics con las que
-sigo trasteando. Todavía pueden ejecutar el software de biología estructural de
-su época.
+de Amigos del Ferrocarril de Madrid, donde ayudo en la medida que puedo a
+conservar el *Tren de los 80*. La electrónica y los ordenadores antiguos son
+otra debilidad, sobre todo las estaciones de trabajo RISC de los noventa. Por
+eso tengo una pequeña colección de máquinas Silicon Graphics con las que sigo
+trasteando. Todavía pueden ejecutar el software de biología estructural de su
+época.
