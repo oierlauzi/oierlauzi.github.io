@@ -1,43 +1,36 @@
 ---
-title: Sobre mí
-description: Doctorando en la Unidad de Biocomputación del CNB-CSIC, trabajando en procesado de imagen para Cryo-EM y Cryo-ET.
-lead: Soy doctorando en la Unidad de Biocomputación del CNB-CSIC, en Madrid. Trabajo en procesado de imagen para Cryo-EM y Cryo-ET, sobre todo en análisis de heterogeneidad y alineamiento de imágenes.
+title: "Sobre mí"
+description: "Doctorando en la Biocomputing Unit del CNB-CSIC, trabajando en procesado de imagen para Cryo-EM y Cryo-ET."
+lead: "Soy doctorando en la Biocomputing Unit del CNB-CSIC, bajo la supervisión del Prof. Carlos Óscar Sorzano y de José Luis Vilas. Desarrollo métodos de procesado de imagen para Cryo-EM y Cryo-ET."
 ---
 
-Crecí en Gernika-Lumo, en Bizkaia. Ahora vivo en Madrid.
+Crecí en Gernika-Lumo, en Bizkaia, aunque ahora vivo en Madrid. Actualmente soy
+estudiante de doctorado en la Biocomputing Unit (BCU) del Centro Nacional de
+Biotecnología (CNB-CSIC) gracias a una beca INPhINIT de la Fundación “la Caixa”.
+Mi investigación se centra en el desarrollo de métodos de procesado de imagen
+para Cryo-EM y Cryo-ET.
 
-Soy doctorando en la Unidad de Biocomputación del Centro Nacional de
-Biotecnología (CNB-CSIC), con una beca INPhINIT de la Fundación “la Caixa”.
-Trabajo en procesado de imagen para Cryo-EM y Cryo-ET. Sobre todo en análisis de
-heterogeneidad, alineamiento de imágenes, selección de partículas y
-reconstrucción ab-initio.
+Llegué al BCU por primera vez en 2021, con una beca JAE Intro. Más tarde me
+contrataron como personal técnico, para ayudar a mantener el paquete Xmipp3 y la
+infraestructura de cómputo. Antes de eso estudié en la Universidad Politécnica
+de Madrid, donde primero cursé el Grado en Ingeniería de Sonido e Imagen y
+después dos másteres, en Ingeniería de Telecomunicación y en Ingeniería de
+Sistemas Electrónicos.
 
-Antes del doctorado pasé dos años como personal técnico en la misma unidad.
-Mantenía el paquete Xmipp3, me ocupaba de las máquinas HPC y GNU/Linux, y
-escribía algoritmos rápidos de alineamiento.
-
-Estudié en la Universidad Politécnica de Madrid. Primero el Grado en Ingeniería
-de Sonido e Imagen, y después dos másteres a la vez, en Ingeniería de
-Telecomunicación y en Ingeniería de Sistemas Electrónicos.
-
-No llegué a la biología estructural desde la biología. Llegué desde el vídeo y
-los gráficos por ordenador. Mi trabajo de fin de grado fue un mezclador de vídeo
-por software, que luego se convirtió en Cenital. Antes había escrito Zuazo, una
-biblioteca de vídeo en tiempo real sobre Vulkan. Las matemáticas se parecían más
-de lo que esperaba.
-
-Lo que me interesa es la computación de alto rendimiento, los gráficos por
-ordenador y el procesado de imagen. Disfruto más de un problema cuando tiene un
-análogo geométrico. Si consigo imaginarme la forma, el código suele salir solo.
+No llegué a la biología estructural desde la biología, sino desde el vídeo y los
+gráficos por ordenador. Mi trabajo de fin de grado fue un mezclador de vídeo por
+software llamado *Cenital*. Estaba construido sobre *Zuazo*, una biblioteca
+modular de procesado de vídeo en tiempo real que había escrito en mi tiempo
+libre durante la carrera. Esos intereses nunca se fueron. El trabajo que más me
+gusta sigue reuniendo la computación de alto rendimiento, los gráficos por
+ordenador y el procesado de imagen. Disfruto sobre todo de un problema que tiene
+una interpretación geométrica, algo que puedo imaginar y representar, no solo
+calcular.
 
 Fuera del trabajo soy aficionado al ferrocarril. Soy voluntario en la Asociación
-de Amigos del Ferrocarril de Madrid, donde ayudo a conservar y hacer circular el
-Tren de los 80.
-
-También me gustan los ordenadores antiguos, sobre todo las estaciones de trabajo
-RISC de los noventa. Tengo una pequeña colección de máquinas Silicon Graphics y
-sigo experimentando con ellas. Todavía pueden ejecutar software antiguo de
-biología estructural, lo cual es una coincidencia simpática viendo a lo que me
-dedico ahora.
-
-Me distraigo con los Lego más de lo que debería reconocer.
+de Amigos del Ferrocarril de Madrid, donde ayudo en la medida que puedo a
+conservar el *Tren de los 80*. La electrónica y los ordenadores antiguos son
+otra debilidad, sobre todo las estaciones de trabajo RISC de los noventa. Por
+eso tengo una pequeña colección de máquinas Silicon Graphics con las que sigo
+trasteando. Todavía pueden ejecutar el software de biología estructural de su
+época.

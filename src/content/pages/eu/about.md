@@ -1,44 +1,34 @@
 ---
-title: Niri buruz
-description: Doktoregaia CNB-CSIC-eko Biokonputazio Unitatean, Cryo-EM eta Cryo-ET irudi-prozesaketan lanean.
-lead: Doktoregaia naiz CNB-CSIC zentroko Biokonputazio Unitatean, Madrilen. Cryo-EM eta Cryo-ET irudi-prozesaketan lan egiten dut, batez ere heterogeneotasunaren analisian eta irudien lerrokatzean.
+title: "Niri buruz"
+description: "Doktoregaia CNB-CSIC-eko Biocomputing Unit-en, Cryo-EM eta Cryo-ET irudi-prozesaketan lanean."
+lead: "Doktoregaia naiz CNB-CSIC zentroko Biocomputing Unit-en, Carlos Óscar Sorzano irakaslearen eta José Luis Vilasen zuzendaritzapean. Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen ditut."
 ---
 
-Gernika-Lumon hazi nintzen, Bizkaian. Orain Madrilen bizi naiz.
+Gernika-Lumon jaio eta hazi nintzen baina orain Madrilen bizi naiz. Gaur egun
+doktoregaia naiz Centro Nacional de Biotecnología-ko (CNB-CSIC) Biocomputing
+Unit (BCU) taldean “la Caixa” Fundazioaren INPhINIT beka bati esker. Nire
+ikerketaren ardatza Cryo-EM eta Cryo-ETrako irudi prozesamendu metodoen garapena
+da.
 
-Doktoregaia naiz Centro Nacional de Biotecnología (CNB-CSIC) zentroko
-Biokonputazio Unitatean, “la Caixa” Fundazioaren INPhINIT bekarekin. Cryo-EM eta
-Cryo-ET irudi-prozesaketan lan egiten dut. Batez ere heterogeneotasunaren
-analisian, irudien lerrokatzean, partikulen hautaketan eta ab-initio
-berreraikuntzan.
+Lehen aldiz 2021ean iritsi nintzen BCUra, JAE Intro beka batekin. Geroago
+teknikari gisa kontratatu ninduten, Xmipp3 softwarea eta kalkulu-azpiegitura
+mantentzen laguntzeko. Hori baino lehen Universidad Politécnica de Madrid-en
+ikasi nuen, non lehenik Soinu eta Irudi Ingeniaritzako Gradua egin nuen, eta
+ondoren bi master, bata Telekomunikazio Ingeniaritzan eta bestea Sistema
+Elektronikoen Ingeniaritzan.
 
-Doktoretza hasi aurretik bi urte eman nituen unitate berean langile tekniko
-gisa. Xmipp3 paketea mantentzen nuen, HPC eta GNU/Linux makinez arduratzen
-nintzen, eta lerrokatze-algoritmo azkarrak idazten nituen.
-
-Madrilgo Unibertsitate Politeknikoan ikasi nuen. Lehenik Soinu eta Irudi
-Ingeniaritzako Gradua, eta gero bi master aldi berean, Telekomunikazio
-Ingeniaritzan eta Sistema Elektronikoen Ingeniaritzan.
-
-Ez nintzen biologiatik iritsi biologia estrukturalera. Bideotik eta ordenagailu
-bidezko grafikoetatik iritsi nintzen. Nire gradu amaierako lana software bidezko
-bideo-nahasgailu bat izan zen, gero Cenital bihurtu zena. Lehenago Zuazo idatzi
-nuen, Vulkan gainean eraikitako denbora errealeko bideo-liburutegia. Matematika
-uste nuena baino antzekoagoa zen.
-
-Interesatzen zaidana errendimendu handiko konputazioa, ordenagailu bidezko
-grafikoak eta irudi-prozesaketa da. Problema batek analogo geometriko bat
-duenean gozatzen dut gehien. Forma irudikatzea lortzen badut, kodea bera ateratzen
-da gero.
+Ez nintzen biologiatik iritsi biologia estrukturalera, baizik eta ordenagailu
+bidezko grafikoetatik. Nire gradu amaierako lana *Cenital* izeneko software
+bidezko bideo-nahasgailua izan zen. *Zuazo* bideo-prozesamendu liburutegiaren
+gainean eraikita zegoen, zein graduan nengoela aisialdi denboran idatzi nuen.
+Jakin-mina haiek ez ziren inoiz joan. Gehien gozatzen dudan lanak errendimendu
+handiko konputazioa, ordenagailu bidezko grafikoak eta irudi-prozesaketa biltzen
+ditu oraindik. Bereziki, interpretazio geometrikoa duen problemak gogoko ditut,
+irudikatu eta erakutsi ditzakedalako, ez bakarrik kalkulatu.
 
 Lanetik kanpo trenzalea naiz. Madrilgo Asociación de Amigos del Ferrocarril
-elkartean egiten dut boluntario-lana, Tren de los 80 kontserbatzen eta
-martxan jartzen laguntzen.
-
-Ordenagailu zaharrak ere gustatzen zaizkit, batez ere laurogeita hamarreko
-hamarkadako RISC lan-estazioak. Silicon Graphics makinen bilduma txiki bat dut
-eta haiekin esperimentatzen jarraitzen dut. Oraindik biologia estrukturaleko
-software zaharra exekutatu dezakete, eta hori kasualitate polita da orain egiten
-dudana kontuan hartuta.
-
-Legoekin aitortu beharko nukeena baino gehiago despistatzen naiz.
+elkartean boluntario-lana egiten dut, ahal dudan neurrian *Tren de los 80*
+zaintzen eta martxan jartzen lagunduz. Nire beste ahulezia ordenagailu eta gailu
+elektroniko zaharrak dira, batez ere laurogeita hamarreko hamarkadako RISC
+lan-estazioak. Horregatik Silicon Graphics makinen bilduma txiki bat dut eta
+beraien garaiko biologia estrukturaleko softwarea exekutatu dezakete.

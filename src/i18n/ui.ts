@@ -129,7 +129,7 @@ export const UI: Record<Locale, UIStrings> = {
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
 
-    'site.role': 'Doctorando, Unidad de Biocomputación, CNB-CSIC',
+    'site.role': 'Doctorando, Biocomputing Unit, CNB-CSIC',
 
     'a11y.skipToContent': 'Saltar al contenido',
     'a11y.languageSwitcher': 'Idioma',
@@ -184,7 +184,7 @@ export const UI: Record<Locale, UIStrings> = {
     'nav.projects': 'Proiektuak',
     'nav.contact': 'Kontaktua',
 
-    'site.role': 'Doktoregaia, Biokonputazio Unitatea, CNB-CSIC',
+    'site.role': 'Doktoregaia, Biocomputing Unit, CNB-CSIC',
 
     'a11y.skipToContent': 'Edukira joan',
     'a11y.languageSwitcher': 'Hizkuntza',

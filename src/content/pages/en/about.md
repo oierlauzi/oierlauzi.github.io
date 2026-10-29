@@ -1,39 +1,32 @@
 ---
-title: About me
-description: PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM and Cryo-ET image processing.
-lead: I am a PhD student at the Biocomputing Unit of the CNB-CSIC, in Madrid. I work on image processing for Cryo-EM and Cryo-ET, mostly heterogeneity analysis and image alignment.
+title: "About me"
+description: "PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM and Cryo-ET image processing."
+lead: "I am a PhD student at the Biocomputing Unit of the CNB-CSIC, supervised by Prof. Carlos Óscar Sorzano and José Luis Vilas. I develop image processing methods for Cryo-EM and Cryo-ET."
 ---
 
-I grew up in Gernika-Lumo, in Bizkaia. I live in Madrid now.
+I grew up in Gernika-Lumo, in Bizkaia, and now live in Madrid. I am currently a
+PhD student at the Biocomputing Unit (BCU) of the Centro Nacional de
+Biotecnología (CNB-CSIC), supported by a “la Caixa” Foundation INPhINIT
+fellowship. My research is on image processing methods for Cryo-EM and Cryo-ET.
 
-I am a PhD student at the Biocomputing Unit of the Centro Nacional de
-Biotecnología (CNB-CSIC), with a “la Caixa” Foundation INPhINIT fellowship. I
-work on image processing for Cryo-EM and Cryo-ET. Most of it is heterogeneity
-analysis, image alignment, particle picking and ab-initio reconstruction.
+I first came to the BCU in 2021, on a JAE Intro fellowship. Later I was hired
+as technical staff, to help maintain the Xmipp3 package and the compute
+infrastructure. Before that I studied at the Universidad Politécnica de Madrid,
+where I took a degree in Sound and Image Engineering first, then two master's
+degrees, in Telecommunications Engineering and in Electronic Systems
+Engineering.
 
-Before the PhD I spent two years as technical staff in the same unit. I
-maintained the Xmipp3 package, looked after the HPC and GNU/Linux machines, and
-wrote fast alignment algorithms.
-
-I studied at the Universidad Politécnica de Madrid. First a degree in Sound and
-Image Engineering, then two master's degrees at the same time, in
-Telecommunications Engineering and in Electronic Systems Engineering.
-
-I did not come to structural biology from biology. I came from video and
-computer graphics. My bachelor's thesis was a software video mixer, which later
-became Cenital. Before that I wrote Zuazo, a real-time video library built on
-Vulkan. The maths turned out to carry over better than I expected.
-
-What interests me is high-performance computing, computer graphics and image
-processing. I get the most out of a problem when it has a geometric analogue. If
-I can picture the shape of it, the code usually follows.
+I did not come to structural biology from biology, but from video and computer
+graphics. My bachelor's thesis was a software video mixer called *Cenital*. It
+was built on *Zuazo*, a real-time and modular video processing library I had
+written in my spare time as an undergraduate. Those interests never left. The
+work I enjoy most still brings together high-performance computing, computer
+graphics and image processing. I am happiest with a problem that has a geometric
+interpretation, something I can picture and display, not only compute.
 
 Outside work I am a railway enthusiast. I volunteer at the Asociación de Amigos
-del Ferrocarril de Madrid, helping to preserve and run the Tren de los 80.
-
-I also like old computers, mostly 90s RISC workstations. I have a small
-collection of Silicon Graphics machines and I still experiment with them. They
-can run early structural biology software, which is a pleasant coincidence given
-what I do now.
-
-I get distracted by Lego more often than I should admit.
+del Ferrocarril de Madrid, helping where I can to preserve and run the *Tren de
+los 80*. Vintage computers and electronics are another weakness, mostly 90s RISC
+workstations. So I keep a small collection of Silicon Graphics machines and
+still tinker with them. They can even run the structural biology software of
+their day.
