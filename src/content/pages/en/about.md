@@ -4,28 +4,28 @@ description: "PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM
 lead: "I am a PhD student at the Biocomputing Unit of the CNB-CSIC, supervised by Prof. Carlos Óscar Sorzano and José Luis Vilas. I develop image processing methods for Cryo-EM and Cryo-ET."
 ---
 
-I grew up in Gernika-Lumo, in Bizkaia, and I live in Madrid now. I am a PhD
+I grew up in Gernika-Lumo, in Bizkaia, and now live in Madrid, where I am a PhD
 student at the Biocomputing Unit of the Centro Nacional de Biotecnología
-(CNB-CSIC), with a “la Caixa” Foundation INPhINIT fellowship, where I develop
+(CNB-CSIC), on a “la Caixa” Foundation INPhINIT fellowship. There I develop
 image processing methods for Cryo-EM and Cryo-ET.
 
-Before the PhD I spent two years in the same unit as technical staff, helping
-maintain the Xmipp3 package and looking after the unit's compute nodes and
-workstations. I studied at the Universidad Politécnica de Madrid, first a degree
-in Sound and Image Engineering, then two master's degrees, in Telecommunications
+I joined the unit two years before the PhD, as technical staff, helping maintain
+the Xmipp3 package and looking after its compute nodes and workstations. Before
+that I studied at the Universidad Politécnica de Madrid, first a degree in Sound
+and Image Engineering, then two master's degrees, in Telecommunications
 Engineering and in Electronic Systems Engineering.
 
 I did not come to structural biology from biology, but from video and computer
 graphics. My bachelor's thesis was a software video mixer called *Cenital*,
-built on *Zuazo*, a real-time and modular video processing library I wrote in my
-spare time as an undergraduate. The work I enjoy most still brings together
-high-performance computing, computer graphics and image processing, and I am
-happiest with a problem that has a geometric analogue, something I can picture
-and not only compute.
+built on *Zuazo*, a real-time and modular video processing library I had written
+in my spare time as an undergraduate. Those interests never really left. The
+work I enjoy most still brings together high-performance computing, computer
+graphics and image processing, and I am happiest with a problem that has a
+geometric analogue, something I can picture and not only compute.
 
 Outside work I am a railway enthusiast, and I volunteer at the Asociación de
 Amigos del Ferrocarril de Madrid, helping where I can to preserve and run the
 *Tren de los 80*. Vintage computers and electronics are another weakness, mostly
-90s RISC workstations. I have a small collection of Silicon Graphics machines
-that I still tinker with, and they can still run early structural biology
-software.
+90s RISC workstations, so I keep a small collection of Silicon Graphics machines
+and still tinker with them. They can even run the structural biology software of
+their day.
