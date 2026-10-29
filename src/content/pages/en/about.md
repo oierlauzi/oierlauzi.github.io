@@ -20,17 +20,17 @@ Engineering and Electronic Systems Engineering.
 
 I did not come to structural biology from biology, but from video and computer
 graphics. My bachelor's thesis was a software video mixer called *Cenital*. It
-builds on *Zuazo*, a real-time modular video processing library I wrote in my
+builds on *Zuazo*, a real-time and modular video processing library I wrote in my
 spare time as an undergraduate.
 
-High-performance computing, computer graphics and image processing are what
-interest me. I enjoy a problem most when it has a geometric analogue.
+The work I enjoy most brings together high-performance computing, computer
+graphics and image processing. I am happiest with a problem that has a
+geometric analogue, something I can picture and not only compute.
 
 Outside work I am a railway enthusiast. I volunteer at the Asociación de Amigos
 del Ferrocarril de Madrid, helping where I can to preserve and run the *Tren de
 los 80*.
 
-Old computers are another weakness, mostly 90s RISC workstations. I have a
+Vintage computers are another weakness, mostly 90s RISC workstations. I have a
 small collection of Silicon Graphics machines that I still tinker with. They
-can still run early structural biology software, which feels like a nice
-coincidence given what I do now.
+can still run early structural biology software.

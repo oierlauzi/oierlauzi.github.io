@@ -24,9 +24,10 @@ software bidezko bideo-nahasgailua izan zen. *Zuazo* liburutegiaren gainean
 eraikita dago, graduan nengoela nire aisialdian idatzi nuen denbora errealeko
 bideo-prozesaketa liburutegi modularra.
 
-Errendimendu handiko konputazioa, ordenagailu bidezko grafikoak eta
-irudi-prozesaketa dira interesatzen zaizkidanak. Problema batez gehien gozatzen
-dut analogo geometriko bat duenean.
+Gehien gozatzen dudan lanak errendimendu handiko konputazioa, ordenagailu
+bidezko grafikoak eta irudi-prozesaketa biltzen ditu. Gusturen analogo
+geometrikoa duen problema batekin egoten naiz, irudika dezakedan zerbait eta ez
+bakarrik kalkulatzekoa.
 
 Lanetik kanpo trenzalea naiz. Madrilgo Asociación de Amigos del Ferrocarril
 elkartean egiten dut boluntario-lana, ahal dudanean *Tren de los 80* zaintzen
@@ -35,5 +36,4 @@ eta martxan jartzen lagunduz.
 Ordenagailu zaharrak dira nire beste ahulezia bat, batez ere laurogeita
 hamarreko hamarkadako RISC lan-estazioak. Silicon Graphics makinen bilduma txiki
 bat dut eta oraindik haiekin trastelatzen dut. Oraindik biologia estrukturaleko
-software zaharra exekutatu dezakete, eta hori kasualitate polita iruditzen zait
-orain egiten dudana kontuan hartuta.
+software zaharra exekutatu dezakete.
