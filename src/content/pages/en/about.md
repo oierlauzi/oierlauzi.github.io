@@ -1,39 +1,36 @@
 ---
 title: About me
 description: PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM and Cryo-ET image processing.
-lead: I am a PhD student at the Biocomputing Unit of the CNB-CSIC, in Madrid. I work on image processing for Cryo-EM and Cryo-ET, mostly heterogeneity analysis and image alignment.
+lead: I am a PhD student at the Biocomputing Unit of the CNB-CSIC, supervised by Prof. Carlos Óscar Sorzano and José Luis Vilas. I develop image processing methods for Cryo-EM and Cryo-ET.
 ---
 
-I grew up in Gernika-Lumo, in Bizkaia. I live in Madrid now.
+I grew up in Gernika-Lumo, in Bizkaia, and I live in Madrid now.
 
 I am a PhD student at the Biocomputing Unit of the Centro Nacional de
 Biotecnología (CNB-CSIC), with a “la Caixa” Foundation INPhINIT fellowship. I
-work on image processing for Cryo-EM and Cryo-ET. Most of it is heterogeneity
-analysis, image alignment, particle picking and ab-initio reconstruction.
+develop image processing methods for Cryo-EM and Cryo-ET.
 
-Before the PhD I spent two years as technical staff in the same unit. I
-maintained the Xmipp3 package, looked after the HPC and GNU/Linux machines, and
-wrote fast alignment algorithms.
+Before the PhD I spent two years in the same unit as technical staff. I helped
+maintain the Xmipp3 package and looked after the unit's compute nodes and
+workstations.
 
-I studied at the Universidad Politécnica de Madrid. First a degree in Sound and
-Image Engineering, then two master's degrees at the same time, in
-Telecommunications Engineering and in Electronic Systems Engineering.
+I studied at the Universidad Politécnica de Madrid, first a degree in Sound and
+Image Engineering, then a double master's degree in Telecommunications
+Engineering and Electronic Systems Engineering.
 
-I did not come to structural biology from biology. I came from video and
-computer graphics. My bachelor's thesis was a software video mixer, which later
-became Cenital. Before that I wrote Zuazo, a real-time video library built on
-Vulkan. The maths turned out to carry over better than I expected.
+I did not come to structural biology from biology, but from video and computer
+graphics. My bachelor's thesis was a software video mixer called *Cenital*. It
+builds on *Zuazo*, a real-time modular video processing library I wrote in my
+spare time as an undergraduate.
 
-What interests me is high-performance computing, computer graphics and image
-processing. I get the most out of a problem when it has a geometric analogue. If
-I can picture the shape of it, the code usually follows.
+High-performance computing, computer graphics and image processing are what
+interest me. I enjoy a problem most when it has a geometric analogue.
 
 Outside work I am a railway enthusiast. I volunteer at the Asociación de Amigos
-del Ferrocarril de Madrid, helping to preserve and run the Tren de los 80.
+del Ferrocarril de Madrid, helping where I can to preserve and run the *Tren de
+los 80*.
 
-I also like old computers, mostly 90s RISC workstations. I have a small
-collection of Silicon Graphics machines and I still experiment with them. They
-can run early structural biology software, which is a pleasant coincidence given
-what I do now.
-
-I get distracted by Lego more often than I should admit.
+Old computers are another weakness, mostly 90s RISC workstations. I have a
+small collection of Silicon Graphics machines that I still tinker with. They
+can still run early structural biology software, which feels like a nice
+coincidence given what I do now.
