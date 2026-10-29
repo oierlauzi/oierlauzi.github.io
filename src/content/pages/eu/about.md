@@ -1,15 +1,15 @@
 ---
 title: "Niri buruz"
-description: "Doktoregaia CNB-CSIC-eko Biokonputazio Unitatean, Cryo-EM eta Cryo-ET irudi-prozesaketan lanean."
-lead: "Doktoregaia naiz CNB-CSIC zentroko Biokonputazio Unitatean, Carlos Óscar Sorzano irakaslearen eta José Luis Vilasen zuzendaritzapean. Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen ditut."
+description: "Doktoregaia CNB-CSIC-eko Biocomputing Unit-en, Cryo-EM eta Cryo-ET irudi-prozesaketan lanean."
+lead: "Doktoregaia naiz CNB-CSIC zentroko Biocomputing Unit-en, Carlos Óscar Sorzano irakaslearen eta José Luis Vilasen zuzendaritzapean. Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen ditut."
 ---
 
 Gernika-Lumon hazi nintzen, Bizkaian, eta orain Madrilen bizi naiz. Gaur egun
 doktoregaia naiz Centro Nacional de Biotecnología (CNB-CSIC) zentroko
-Biokonputazio Unitatean, “la Caixa” Fundazioaren INPhINIT bekarekin. Nire
+Biocomputing Unit-en (BCU), “la Caixa” Fundazioaren INPhINIT bekarekin. Nire
 ikerketa Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoei buruzkoa da.
 
-Lehen aldiz 2021ean iritsi nintzen unitatera, JAE Intro beka batekin. Geroago
+Lehen aldiz 2021ean iritsi nintzen BCUra, JAE Intro beka batekin. Geroago
 langile tekniko gisa kontratatu ninduten, Xmipp3 paketea eta kalkulu-azpiegitura
 mantentzen laguntzeko. Hori baino lehen Madrilgo Unibertsitate Politeknikoan
 ikasi nuen, non lehenik Soinu eta Irudi Ingeniaritzako Gradua egin nuen, eta

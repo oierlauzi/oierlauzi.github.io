@@ -5,11 +5,11 @@ lead: "I am a PhD student at the Biocomputing Unit of the CNB-CSIC, supervised b
 ---
 
 I grew up in Gernika-Lumo, in Bizkaia, and now live in Madrid. I am currently a
-PhD student at the Biocomputing Unit of the Centro Nacional de Biotecnología
-(CNB-CSIC), supported by a “la Caixa” Foundation INPhINIT fellowship. My
-research is on image processing methods for Cryo-EM and Cryo-ET.
+PhD student at the Biocomputing Unit (BCU) of the Centro Nacional de
+Biotecnología (CNB-CSIC), supported by a “la Caixa” Foundation INPhINIT
+fellowship. My research is on image processing methods for Cryo-EM and Cryo-ET.
 
-I first came to the unit in 2021, on a JAE Intro fellowship. Later I was hired
+I first came to the BCU in 2021, on a JAE Intro fellowship. Later I was hired
 as technical staff, to help maintain the Xmipp3 package and the compute
 infrastructure. Before that I studied at the Universidad Politécnica de Madrid,
 where I took a degree in Sound and Image Engineering first, then two master's
