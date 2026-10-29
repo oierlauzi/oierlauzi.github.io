@@ -4,10 +4,10 @@ description: "PhD student at the Biocomputing Unit, CNB-CSIC, working on Cryo-EM
 lead: "I am a PhD student at the Biocomputing Unit of the CNB-CSIC, supervised by Prof. Carlos Óscar Sorzano and José Luis Vilas. I develop image processing methods for Cryo-EM and Cryo-ET."
 ---
 
-I grew up in Gernika-Lumo, in Bizkaia, and now live in Madrid, where I am a PhD
+I grew up in Gernika-Lumo, in Bizkaia, and now live in Madrid. I am a PhD
 student at the Biocomputing Unit of the Centro Nacional de Biotecnología
-(CNB-CSIC), on a “la Caixa” Foundation INPhINIT fellowship. There I develop
-image processing methods for Cryo-EM and Cryo-ET.
+(CNB-CSIC), where I develop image processing methods for Cryo-EM and Cryo-ET.
+A “la Caixa” Foundation INPhINIT fellowship supports the work.
 
 I joined the unit two years before the PhD, as technical staff, helping maintain
 the Xmipp3 package and looking after its compute nodes and workstations. Before

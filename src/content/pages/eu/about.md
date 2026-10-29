@@ -4,10 +4,10 @@ description: "Doktoregaia CNB-CSIC-eko Biokonputazio Unitatean, Cryo-EM eta Cryo
 lead: "Doktoregaia naiz CNB-CSIC zentroko Biokonputazio Unitatean, Carlos Óscar Sorzano irakaslearen eta José Luis Vilasen zuzendaritzapean. Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen ditut."
 ---
 
-Gernika-Lumon hazi nintzen, Bizkaian, eta orain Madrilen bizi naiz, non
-doktoregaia naizen Centro Nacional de Biotecnología (CNB-CSIC) zentroko
-Biokonputazio Unitatean, “la Caixa” Fundazioaren INPhINIT bekarekin. Han Cryo-EM
-eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen ditut.
+Gernika-Lumon hazi nintzen, Bizkaian, eta orain Madrilen bizi naiz. Doktoregaia
+naiz Centro Nacional de Biotecnología (CNB-CSIC) zentroko Biokonputazio
+Unitatean, non Cryo-EM eta Cryo-ET-rako irudi-prozesaketa metodoak garatzen
+ditudan. “la Caixa” Fundazioaren INPhINIT bekak babesten du lan hori.
 
 Doktoretza baino bi urte lehenago sartu nintzen unitatean, langile tekniko gisa,
 Xmipp3 paketea mantentzen lagunduz eta haren kalkulu-nodoez eta lan-estazioez

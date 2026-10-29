@@ -4,10 +4,10 @@ description: "Doctorando en la Unidad de Biocomputación del CNB-CSIC, trabajand
 lead: "Soy doctorando en la Unidad de Biocomputación del CNB-CSIC, bajo la supervisión del Prof. Carlos Óscar Sorzano y de José Luis Vilas. Desarrollo métodos de procesado de imagen para Cryo-EM y Cryo-ET."
 ---
 
-Crecí en Gernika-Lumo, en Bizkaia, y ahora vivo en Madrid, donde soy doctorando
-en la Unidad de Biocomputación del Centro Nacional de Biotecnología (CNB-CSIC),
-con una beca INPhINIT de la Fundación “la Caixa”. Allí desarrollo métodos de
-procesado de imagen para Cryo-EM y Cryo-ET.
+Crecí en Gernika-Lumo, en Bizkaia, y ahora vivo en Madrid. Soy doctorando en la
+Unidad de Biocomputación del Centro Nacional de Biotecnología (CNB-CSIC), donde
+desarrollo métodos de procesado de imagen para Cryo-EM y Cryo-ET. El trabajo
+está financiado por una beca INPhINIT de la Fundación “la Caixa”.
 
 Entré en la unidad dos años antes del doctorado, como personal técnico,
 ayudando a mantener el paquete Xmipp3 y ocupándome de sus nodos de cálculo y
