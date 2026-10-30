@@ -10,17 +10,21 @@
     es: C++ a nivel avanzado
     eu: C++ maila aurreratuan
 
+# Note-only, like cryoem: each claim is attached to a date or a named post and
+# duration, so a reader can check it against the technical-staff entry in
+# experience.yaml instead of taking it on trust. Chips here would read as
+# self-assigned labels, which is what this section is meant to avoid.
 - id: systems
   order: 2
   label:
-    en: Systems and tooling
-    es: Sistemas y herramientas
-    eu: Sistemak eta tresnak
-  items: [GNU/Linux, HPC, CMake, GitHub Actions]
+    en: Systems
+    es: Sistemas
+    eu: Sistemak
+  items: []
   note:
-    en: Daily GNU/Linux user since 2012, with sysadmin experience on Linux and GPU infrastructure
-    es: Usuario diario de GNU/Linux desde 2012, con experiencia de administración en infraestructura Linux y GPU
-    eu: 2012az geroztik eguneroko GNU/Linux erabiltzailea, Linux eta GPU azpiegituran administratzaile-esperientziarekin
+    en: Daily GNU/Linux user since 2012; two years as sysadmin for the Biocomputing Unit's HPC nodes, workstations and network
+    es: Usuario diario de GNU/Linux desde 2012; dos años como administrador de los nodos HPC, las estaciones de trabajo y la red de la Biocomputing Unit
+    eu: 2012az geroztik eguneroko GNU/Linux erabiltzailea; bi urtez Biocomputing Unit-eko HPC nodoen, lan-estazioen eta sarearen administratzailea
 
 # A capability line rather than an inventory of packages. The two suites with
 # first-hand development work are the part a reader cannot infer from the
