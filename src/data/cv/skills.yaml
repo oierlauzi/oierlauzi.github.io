@@ -10,10 +10,6 @@
     es: C++ a nivel avanzado
     eu: C++ maila aurreratuan
 
-# Note-only, like cryoem: each claim is attached to a date or a named post and
-# duration, so a reader can check it against the technical-staff entry in
-# experience.yaml instead of taking it on trust. Chips here would read as
-# self-assigned labels, which is what this section is meant to avoid.
 - id: systems
   order: 2
   label:
@@ -22,14 +18,10 @@
     eu: Sistemak
   items: []
   note:
-    en: Daily GNU/Linux user since 2012; two years as sysadmin for the Biocomputing Unit's HPC nodes, workstations and network
-    es: Usuario diario de GNU/Linux desde 2012; dos años como administrador de los nodos HPC, las estaciones de trabajo y la red de la Biocomputing Unit
-    eu: 2012az geroztik eguneroko GNU/Linux erabiltzailea; bi urtez Biocomputing Unit-eko HPC nodoen, lan-estazioen eta sarearen administratzailea
+    en: Daily GNU/Linux user since 2012; two years as helping as a sysadmin for the Biocomputing Unit's HPC nodes, workstations and network
+    es: Usuario diario de GNU/Linux desde 2012; dos años colaborando como administrador de los nodos HPC, las estaciones de trabajo y la red de la Biocomputing Unit
+    eu: Eguneroko GNU/Linux erabiltzailea 2012tik; bi urtez Biocomputing Unit-eko HPC nodoen, lan-estazioen eta sarearen administratzaile lanetan laguntzen.
 
-# A capability line rather than an inventory of packages. The two suites with
-# first-hand development work are the part a reader cannot infer from the
-# publications; the rest of the old list only said "I have used the standard
-# tools", which the publications already imply.
 - id: cryoem
   order: 3
   label:
@@ -38,6 +30,6 @@
     eu: Cryo-EM eta Cryo-ET
   items: []
   note:
-    en: Processing and method development on single-particle and tomography datasets, mainly within Scipion and Xmipp
-    es: Procesado y desarrollo de métodos sobre datos de partícula individual y tomografía, principalmente en Scipion y Xmipp
-    eu: Partikula bakarreko eta tomografiako datuen prozesaketa eta metodoen garapena, batez ere Scipion eta Xmipp-en
+    en: Processing and method development for Cryo-EM and Cryo-ET datasets.
+    es: Procesado y desarollo de métodos para imágenes de Cryo-EM y Cryo-ET
+    eu: Cryo-EM eta Cryo-ET datu-bildumen procesamendua eta honetarako algoritmoen garapena.
