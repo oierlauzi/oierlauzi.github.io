@@ -21,7 +21,6 @@ const choices = LOCALES.map((locale) => ({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{PERSON.fullName}</title>
     <meta name="robots" content="noindex, follow" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
 
     {choices.map((c) => <link rel="alternate" hreflang={c.locale} href={new URL(c.href, SITE.url).href} />)}
     <link rel="alternate" hreflang="x-default" href={new URL(localePath(DEFAULT_LOCALE, 'home'), SITE.url).href} />

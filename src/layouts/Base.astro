@@ -43,8 +43,6 @@ const pageTitle = title ? `${title} · ${PERSON.fullName}` : PERSON.fullName;
     {alts.map((alt) => <link rel="alternate" hreflang={alt.locale} href={new URL(alt.path, SITE.url).href} />)}
     <link rel="alternate" hreflang="x-default" href={xDefault.href} />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-
     {/* Only the two latin cuts are preloaded; latin-ext is fetched on demand. */}
     <link
       rel="preload"
