@@ -17,9 +17,9 @@ components:
   - name: rexlib
     url: https://github.com/gigabit-clowns/rexlib
     summary:
-      en: Device-agnostic array computing library with a pluggable backend architecture.
-      es: Biblioteca de cálculo con arrays independiente del dispositivo, con arquitectura de backends intercambiables.
-      eu: Gailuarekiko independentea den array-kalkulu liburutegia, backend trukagarrien arkitekturarekin.
+      en: Device-agnostic array computing library for Cryo-EM and Cryo-ET with a pluggable backend architecture.
+      es: Biblioteca de cálculo con arrays para Cryo-EM y Cryo-ET multiplataforma, con arquitectura de backends intercambiables.
+      eu: Cryo-EM eta Cryo-ET-rako array-kalkulu liburutegi modularra.
   - name: rexlib-cuda
     url: https://github.com/gigabit-clowns/rexlib-cuda
     summary:

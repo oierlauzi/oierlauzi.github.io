@@ -2,8 +2,8 @@ name: renfe-flipdot-re
 kind: personal
 status: active
 summary:
-  en: Reverse engineering of a flip-dot station display used on RENFE Cercanías.
-  es: Ingeniería inversa de un panel de puntos abatibles de estación usado en RENFE Cercanías.
-  eu: RENFE Cercanías-en erabilitako geltokiko flip-dot panelaren alderantzizko ingeniaritza.
+  en: Reverse engineering of a flip-dot display used on RENFE Cercanías stations.
+  es: Ingeniería inversa de un panel de puntos usado en estaciones de RENFE Cercanías.
+  eu: RENFE Cercanías-en geltokietan erabilitako pantaila baten alderantzizko ingeniaritza.
 tech: [C]
 primaryUrl: https://github.com/oierlauzi/renfe-flipdot-re

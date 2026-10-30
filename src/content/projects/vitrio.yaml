@@ -4,8 +4,8 @@ name: vitrio
 kind: independent
 status: active
 summary:
-  en: High-throughput Cryo-EM image I/O for Python.
-  es: Entrada/salida de imagen de Cryo-EM de alto rendimiento para Python.
-  eu: Errendimendu handiko Cryo-EM irudi sarrera/irteera Python-erako.
+  en: High-throughput Cryo-EM and Cryo-ET image I/O library for Python.
+  es: Librería para lectura/escritura rápida de imagenes de Cryo-EM y Cryo-ET.
+  eu: Errendimendu handiko Cryo-EM irudien sarrera/irteera liburutegia.
 tech: [C++, Python]
 primaryUrl: https://github.com/gigabit-clowns/vitrio

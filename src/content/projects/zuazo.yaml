@@ -6,9 +6,9 @@ period:
   start: '2018'
   end: '2021'
 summary:
-  en: Real-time, GPU-accelerated video processing library written in C++ and Vulkan.
-  es: Biblioteca de procesado de vídeo en tiempo real acelerada por GPU, escrita en C++ y Vulkan.
-  eu: Denbora errealeko bideo-prozesaketa liburutegia, GPUz azeleratua, C++ eta Vulkan-en idatzia.
+  en: Real-time, GPU-accelerated video processing library.
+  es: Biblioteca de procesado de vídeo en tiempo real acelerada por GPU.
+  eu: Denbora errealeko bideo-prozesaketa liburutegia, GPUz azeleratua.
 tech: [C++, Vulkan, GLSL, CMake]
 primaryUrl: https://github.com/oierlauzi/zuazo
 components:
@@ -27,9 +27,9 @@ components:
   - name: zuazo-window
     url: https://github.com/oierlauzi/zuazo-window
     summary:
-      en: Window output.
-      es: Salida a ventana.
-      eu: Leiho bidezko irteera.
+      en: OS window output.
+      es: Salida a ventana del sistema operativo.
+      eu: Sistemako leiho bidezko irteera.
   - name: zuazo-ndi
     url: https://github.com/oierlauzi/zuazo-ndi
     summary:

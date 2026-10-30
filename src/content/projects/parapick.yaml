@@ -4,6 +4,6 @@ status: active
 summary:
   en: Particle picking on Cryo-ET tilt-series.
   es: Selección de partículas en series de inclinación de Cryo-ET.
-  eu: Partikulen hautaketa Cryo-ET inklinazio-serieetan.
+  eu: Partikulen hautaketa Cryo-ET-ko inklinazio-serieetan.
 tech: [Python]
 primaryUrl: https://github.com/oierlauzi/parapick

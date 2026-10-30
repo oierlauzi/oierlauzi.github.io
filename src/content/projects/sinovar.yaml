@@ -3,9 +3,9 @@ kind: research
 status: active
 featured: true
 summary:
-  en: Cryo-EM heterogeneity analysis via common lines.
+  en: Cryo-EM heterogeneity analysis via common-lines.
   es: Análisis de heterogeneidad en Cryo-EM mediante líneas comunes.
-  eu: Cryo-EM-eko heterogeneotasun-analisia lerro komunen bidez.
+  eu: Cryo-EM-eko heterogeneotasun-analisia lerro-komunen bidez.
 tech: [Python]
 primaryUrl: https://github.com/oierlauzi/sinovar
 components:
@@ -14,4 +14,4 @@ components:
     summary:
       en: Scipion plugin exposing sinovar as a protocol.
       es: Complemento de Scipion que expone sinovar como protocolo.
-      eu: sinovar protokolo gisa eskaintzen duen Scipion plugina.
+      eu: sinovar eskaintzen Scipion bidez eskaintzeko plugina.
