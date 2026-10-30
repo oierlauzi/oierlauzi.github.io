@@ -28,7 +28,7 @@ irudikatu eta erakutsi ditzakedalako, ez bakarrik kalkulatu.
 
 Lanetik kanpo trenzalea naiz. Madrilgo Asociación de Amigos del Ferrocarril
 elkartean boluntario-lana egiten dut, ahal dudan neurrian *Tren de los 80*
-zaintzen eta martxan jartzen lagunduz. Nire beste ahulezia ordenagailu eta gailu
-elektroniko zaharrak dira, batez ere laurogeita hamarreko hamarkadako RISC
-lan-estazioak. Horregatik Silicon Graphics makinen bilduma txiki bat dut eta
-beraien garaiko biologia estrukturaleko softwarea exekutatu dezakete.
+zaintzen eta martxan jartzen lagunduz. Nire beste zaletasuna ordenagailu eta
+gailu elektroniko zaharrak dira, batez ere laurogeita hamarreko hamarkadako RISC
+lan-estazioak. Horregatik Silicon Graphics makinen bilduma txiki bat dut.
+Oiraindik beraien garaiko biologia estrukturaleko softwarea exekutatu dezakete.
