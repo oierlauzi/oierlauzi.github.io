@@ -41,9 +41,9 @@
     start: '2022'
     end: '2024'
   bullets:
-    - en: HPC and GNU/Linux systems administration
-      es: Administración de sistemas HPC y GNU/Linux
-      eu: HPC eta GNU/Linux sistemen administrazioa
+    - en: Administration of HPC, GNU/Linux and network infrastructure
+      es: Administración de infraestructura HPC, GNU/Linux y de red
+      eu: HPC, GNU/Linux eta sare-azpiegituraren administrazioa
     - en: Maintenance of the Xmipp3 software package
       es: Mantenimiento del paquete de software Xmipp3
       eu: Xmipp3 software paketearen mantentze-lana

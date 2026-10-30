@@ -27,7 +27,6 @@ const ongoing = t('date.ongoing');
 const experience = (await getCollection('experience')).sort((a, b) => byPeriodDesc(a.data, b.data));
 const education = (await getCollection('education')).sort((a, b) => byPeriodDesc(a.data, b.data));
 const internships = (await getCollection('internships')).sort((a, b) => byPeriodDesc(a.data, b.data));
-const volunteering = (await getCollection('volunteering')).sort((a, b) => byPeriodDesc(a.data, b.data));
 const awards = (await getCollection('awards')).sort((a, b) => byDateDesc(a.data, b.data));
 const skills = (await getCollection('skills')).sort((a, b) => byOrder(a.data, b.data));
 const languages = (await getCollection('languages')).sort((a, b) => byOrder(a.data, b.data));
@@ -197,27 +196,6 @@ const title = t('nav.cv');
         ))
       }
     </ul>
-  </CvSection>
-
-  <CvSection title={t('cv.volunteering')} id="volunteering">
-    {
-      volunteering.map((e) => (
-        <CvEntry
-          locale={locale}
-          ongoingLabel={ongoing}
-          title={e.data.title}
-          organisation={e.data.organisation}
-          unit={e.data.unit}
-          location={e.data.location}
-          period={e.data.period}
-          distinctions={e.data.distinctions}
-          bullets={e.data.bullets}
-          url={e.data.url}
-          inPdf={e.data.inPdf}
-          pdfBullets={e.data.pdfBullets}
-        />
-      ))
-    }
   </CvSection>
 </Base>
 

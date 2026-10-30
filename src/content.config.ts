@@ -51,9 +51,12 @@ const skills = defineCollection({
   loader: file('src/data/cv/skills.yaml'),
   schema: z.object({
     label: localized(z.string()),
-    /** Tool and language names are proper nouns — not translated. */
     /** Author-defined display order; getCollection() is unordered. */
     order: z.number().int().default(0),
+    /**
+     * Tool and language names are proper nouns — not translated. May be empty,
+     * for a group carried entirely by its `note`.
+     */
     items: z.array(z.string()).default([]),
     /** For groups that read as a sentence rather than a list. */
     note: localized(z.string()).optional(),
