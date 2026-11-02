@@ -16,7 +16,9 @@
     end: null
 
 # Honours pending: 3 subjects per the 2026 CV, which gives only the count.
-# The degree is 60 ECTS, so `totalCredits: 60` once the subjects are known.
+# Coursework only — the thesis took the maximum grade but no honours, unlike
+# the B.Sc. one. The degree is 60 ECTS, so `totalCredits: 60` once the
+# subjects are known.
 - id: msc-electronic-systems
   title:
     en: M.Sc. in Electronic Systems Engineering
@@ -39,7 +41,8 @@
 # Honours pending: 4 subjects per the 2026 CV, of which the 2021 CV in this
 # repo's history (494415f) names two — Ingeniería de Sistemas de
 # instrumentación (6 ECTS) and Sistemas y Servicios Multimedia (6 ECTS).
-# The degree is 120 ECTS.
+# Coursework only — the thesis took the maximum grade but no honours, unlike
+# the B.Sc. one. The degree is 120 ECTS.
 - id: msc-telecommunications
   title:
     en: M.Sc. in Telecommunications Engineering
