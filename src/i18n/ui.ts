@@ -44,7 +44,10 @@ export interface UIStrings {
   'cv.languages': string;
   'cv.volunteering': string;
   'cv.publications': string;
-  'cv.honours': string;
+  /* One complete sentence per plural category, rather than fragments to
+     assemble: a translator can read each and judge it. */
+  'cv.honours.one': string;
+  'cv.honours.other': string;
 
   'pub.journal': string;
   'pub.conference': string;
@@ -102,7 +105,8 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Languages',
     'cv.volunteering': 'Volunteering',
     'cv.publications': 'Publications',
-    'cv.honours': 'Honours in {credits} of {total} ECTS',
+    'cv.honours.one': 'Honours in {count} subject ({credits} of {total} ECTS)',
+    'cv.honours.other': 'Honours in {count} subjects ({credits} of {total} ECTS)',
 
     'pub.journal': 'Journal articles',
     'pub.conference': 'Conference proceedings',
@@ -158,7 +162,8 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Idiomas',
     'cv.volunteering': 'Voluntariado',
     'cv.publications': 'Publicaciones',
-    'cv.honours': 'Matrícula de Honor en {credits} de {total} ECTS',
+    'cv.honours.one': 'Matrícula de Honor en {count} asignatura ({credits} de {total} ECTS)',
+    'cv.honours.other': 'Matrícula de Honor en {count} asignaturas ({credits} de {total} ECTS)',
 
     'pub.journal': 'Artículos en revista',
     'pub.conference': 'Actas de congreso',
@@ -214,7 +219,8 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Hizkuntzak',
     'cv.volunteering': 'Boluntariotza',
     'cv.publications': 'Argitalpenak',
-    'cv.honours': 'Ohorezko matrikula {credits} ECTS-etan ({total} guztira)',
+    'cv.honours.one': 'Ohorezko matrikula irakasgai batean ({credits} ECTS, {total}etik)',
+    'cv.honours.other': 'Ohorezko matrikula {count} irakasgaitan ({credits} ECTS, {total}etik)',
 
     'pub.journal': 'Aldizkari-artikuluak',
     'pub.conference': 'Kongresuko aktak',

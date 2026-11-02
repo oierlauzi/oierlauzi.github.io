@@ -13,8 +13,8 @@ interface Props {
   distinctions?: Localized<string>[];
   bullets?: Localized<string>[];
   honours?: Honours | undefined;
-  /** `cv.honours`, with {credits} and {total} still to fill in. */
-  honoursLabel?: string | undefined;
+  /** `cv.honours.*`, with {count}, {credits} and {total} still to fill in. */
+  honoursLabels?: { one: string; other: string } | undefined;
   url?: string | undefined;
   ongoingLabel: string;
   /** False drops the whole entry from the PDF, keeping it on the web. */
@@ -33,7 +33,7 @@ const {
   distinctions = [],
   bullets = [],
   honours,
-  honoursLabel,
+  honoursLabels,
   url,
   ongoingLabel,
   inPdf = true,
@@ -42,16 +42,22 @@ const {
 
 const affiliation = [unit, organisation].filter(Boolean).join(', ');
 
-// Credits come from the list itself, so the headline figure and the subjects
+// Both figures come from the list itself, so the headline and the subjects
 // behind it cannot disagree. Intl because the decimal separator differs: 97.5
-// in English, 97,5 in Spanish and Basque.
-const credits = new Intl.NumberFormat(LOCALE_META[locale].intlTag);
-const honoursTally =
-  honours && honoursLabel
-    ? honoursLabel
-        .replace('{credits}', credits.format(honours.subjects.reduce((n, s) => n + s.credits, 0)))
-        .replace('{total}', credits.format(honours.totalCredits))
-    : null;
+// in English, 97,5 in Spanish and Basque. PluralRules because the schema
+// allows a single honour, and "1 subjects" would be a visible bug.
+const intlTag = LOCALE_META[locale].intlTag;
+const credits = new Intl.NumberFormat(intlTag);
+const honoursTally = (() => {
+  if (!honours || !honoursLabels) return null;
+  const count = honours.subjects.length;
+  const category = new Intl.PluralRules(intlTag).select(count);
+  const label = category === 'one' ? honoursLabels.one : honoursLabels.other;
+  return label
+    .replace('{count}', credits.format(count))
+    .replace('{credits}', credits.format(honours.subjects.reduce((n, s) => n + s.credits, 0)))
+    .replace('{total}', credits.format(honours.totalCredits));
+})();
 
 // A per-entry bullet cap cannot be expressed in CSS alone — :nth-child() cannot
 // read a custom property — so the surplus is marked here and print.css hides it.
