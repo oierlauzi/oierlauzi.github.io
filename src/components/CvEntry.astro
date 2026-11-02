@@ -1,6 +1,6 @@
 ---
-import type { Locale } from '../i18n/locales';
-import type { Localized, Period } from '../content/schema';
+import { LOCALE_META, type Locale } from '../i18n/locales';
+import type { Honours, Localized, Period } from '../content/schema';
 import { formatPeriod } from '../lib/dates';
 
 interface Props {
@@ -12,6 +12,9 @@ interface Props {
   period: Period;
   distinctions?: Localized<string>[];
   bullets?: Localized<string>[];
+  honours?: Honours | undefined;
+  /** `cv.honours`, with {credits} and {total} still to fill in. */
+  honoursLabel?: string | undefined;
   url?: string | undefined;
   ongoingLabel: string;
   /** False drops the whole entry from the PDF, keeping it on the web. */
@@ -29,6 +32,8 @@ const {
   period,
   distinctions = [],
   bullets = [],
+  honours,
+  honoursLabel,
   url,
   ongoingLabel,
   inPdf = true,
@@ -36,6 +41,17 @@ const {
 } = Astro.props;
 
 const affiliation = [unit, organisation].filter(Boolean).join(', ');
+
+// Credits come from the list itself, so the headline figure and the subjects
+// behind it cannot disagree. Intl because the decimal separator differs: 97.5
+// in English, 97,5 in Spanish and Basque.
+const credits = new Intl.NumberFormat(LOCALE_META[locale].intlTag);
+const honoursTally =
+  honours && honoursLabel
+    ? honoursLabel
+        .replace('{credits}', credits.format(honours.subjects.reduce((n, s) => n + s.credits, 0)))
+        .replace('{total}', credits.format(honours.totalCredits))
+    : null;
 
 // A per-entry bullet cap cannot be expressed in CSS alone — :nth-child() cannot
 // read a custom property — so the surplus is marked here and print.css hides it.
@@ -61,6 +77,23 @@ const bulletHidden = (index: number) => pdfBullets !== undefined && index >= pdf
           <li>{d[locale]}</li>
         ))}
       </ul>
+    )
+  }
+
+  {
+    honours && honoursTally && (
+      <details class="entry__honours">
+        {/* Collapsed by default, and print.css keeps only the summary line: a
+            CV entry should not open onto seventeen course titles. */}
+        <summary>{honoursTally}</summary>
+        <ul>
+          {honours.subjects.map((s) => (
+            <li>
+              {s.name} ({credits.format(s.credits)} ECTS)
+            </li>
+          ))}
+        </ul>
+      </details>
     )
   }
 
@@ -139,5 +172,42 @@ const bulletHidden = (index: number) => pdfBullets !== undefined && index >= pdf
   .entry__bullets li {
     font-size: var(--step--1);
     color: var(--ink-soft);
+  }
+
+  /*
+   * The disclosure triangle is this line's marker on screen, where the em dash
+   * of a distinction would say "fact" rather than "there is more here". In the
+   * PDF, where nothing is clickable, print.css swaps it back for the dash so
+   * the line matches its siblings.
+   */
+  .entry__honours {
+    margin-top: var(--space-2xs);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+
+  .entry__honours summary {
+    cursor: pointer;
+  }
+
+  .entry__honours summary:hover {
+    color: var(--ink);
+  }
+
+  .entry__honours ul {
+    margin-top: 0.4em;
+    padding-left: 1.2em;
+  }
+
+  /* Seventeen titles are a long scroll in one column. */
+  @media (min-width: 40rem) {
+    .entry__honours ul {
+      columns: 2;
+      column-gap: var(--space-l);
+    }
+  }
+
+  .entry__honours li {
+    break-inside: avoid;
   }
 </style>

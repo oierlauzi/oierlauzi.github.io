@@ -75,6 +75,30 @@
     break-inside: avoid;
   }
 
+  /*
+   * The honours line keeps its tally and drops its subject list: the list is a
+   * screen affordance, and seventeen course titles would take over the page.
+   * The disclosure triangle goes with it, replaced by the em dash the sibling
+   * distinctions carry, since nothing in a PDF can be opened.
+   */
+  .entry__honours ul {
+    display: none;
+  }
+
+  .entry__honours summary {
+    list-style: none;
+  }
+
+  .entry__honours summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .entry__honours summary::before {
+    content: '—';
+    color: var(--muted);
+    margin-right: 0.5em;
+  }
+
   .section-label {
     break-after: avoid;
     margin-block: 1.4em 0.5em;

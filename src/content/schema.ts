@@ -37,6 +37,26 @@ export const period = z.object({
 export type Period = z.infer<typeof period>;
 
 /**
+ * Honours ("Matrícula de Honor") carried by credit weight rather than by a
+ * count of subjects: "17 subjects" says nothing about how much of the degree
+ * that is, while 97.5 of 240 ECTS does.
+ *
+ * Course titles are the institution's own names and stay untranslated, which
+ * is also how the author's earlier CVs printed them in all three languages.
+ * The tally is summed at render rather than stored, so it cannot drift from
+ * the list it describes.
+ */
+export const honoursSchema = z.object({
+  /** The degree's full credit load, so the tally reads as a proportion. */
+  totalCredits: z.number().positive(),
+  subjects: z
+    .array(z.object({ name: z.string(), credits: z.number().positive() }))
+    .min(1),
+});
+
+export type Honours = z.infer<typeof honoursSchema>;
+
+/**
  * Shared by `education`, `experience`, `internships` and `volunteering` —
  * four collections for the price of one schema.
  *

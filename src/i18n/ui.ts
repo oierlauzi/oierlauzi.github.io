@@ -44,6 +44,7 @@ export interface UIStrings {
   'cv.languages': string;
   'cv.volunteering': string;
   'cv.publications': string;
+  'cv.honours': string;
 
   'pub.journal': string;
   'pub.conference': string;
@@ -101,6 +102,7 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Languages',
     'cv.volunteering': 'Volunteering',
     'cv.publications': 'Publications',
+    'cv.honours': 'Honours in {credits} of {total} ECTS',
 
     'pub.journal': 'Journal articles',
     'pub.conference': 'Conference proceedings',
@@ -156,6 +158,7 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Idiomas',
     'cv.volunteering': 'Voluntariado',
     'cv.publications': 'Publicaciones',
+    'cv.honours': 'Matrícula de Honor en {credits} de {total} ECTS',
 
     'pub.journal': 'Artículos en revista',
     'pub.conference': 'Actas de congreso',
@@ -211,6 +214,7 @@ export const UI: Record<Locale, UIStrings> = {
     'cv.languages': 'Hizkuntzak',
     'cv.volunteering': 'Boluntariotza',
     'cv.publications': 'Argitalpenak',
+    'cv.honours': 'Ohorezko matrikula {credits} ECTS-etan ({total} guztira)',
 
     'pub.journal': 'Aldizkari-artikuluak',
     'pub.conference': 'Kongresuko aktak',

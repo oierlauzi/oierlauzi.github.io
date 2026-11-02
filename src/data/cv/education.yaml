@@ -1,6 +1,8 @@
-# Degrees. Academic marks and honours-subject counts are deliberately omitted;
-# the distinctions below carry the same information without reading as a
-# student transcript. Dates are quoted so YAML keeps them as strings.
+# Degrees. Average marks are deliberately omitted — the distinctions say more
+# than a number out of ten does. Honours are kept, but by credit weight rather
+# than by subject count, and the full list sits behind a disclosure on the web
+# so the entry stays a CV line rather than a transcript. Dates are quoted so
+# YAML keeps them as strings.
 
 - id: phd
   title:
@@ -69,3 +71,23 @@
     - en: Maximum grade and honours in the Bachelor’s Thesis
       es: Calificación máxima y matrícula de honor en el Trabajo Fin de Grado
       eu: Gehienezko kalifikazioa eta ohorezko matrikula Gradu Amaierako Lanean
+  honours:
+    totalCredits: 240
+    subjects:
+      - { name: 'Talleres de iniciación a la ingeniería', credits: 3 }
+      - { name: 'Álgebra lineal', credits: 6 }
+      - { name: 'Programación I', credits: 6 }
+      - { name: 'Cálculo II', credits: 6 }
+      - { name: 'Análisis de circuitos I', credits: 6 }
+      - { name: 'Análisis de circuitos II', credits: 6 }
+      - { name: 'Electrónica I', credits: 6 }
+      - { name: 'Electrónica II', credits: 6 }
+      - { name: 'Señales y sistemas', credits: 6 }
+      - { name: 'Microprocesadores', credits: 6 }
+      - { name: 'Sistemas Operativos', credits: 4.5 }
+      - { name: 'Acústica Arquitectónica', credits: 6 }
+      - { name: 'Ingeniería de vídeo', credits: 4.5 }
+      - { name: 'Síntesis y animación de imágenes', credits: 4.5 }
+      - { name: 'Sistemas basados en microprocesador', credits: 6 }
+      - { name: 'Matemática discreta', credits: 3 }
+      - { name: 'Proyecto de fin de grado', credits: 12 }

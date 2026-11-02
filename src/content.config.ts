@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { localized, partialDate, period, positionSchema } from './content/schema';
+import { honoursSchema, localized, partialDate, period, positionSchema } from './content/schema';
 
 /*
  * One YAML file per CV section. `file()` is one-collection-per-file, so the
@@ -14,7 +14,8 @@ import { localized, partialDate, period, positionSchema } from './content/schema
 
 const education = defineCollection({
   loader: file('src/data/cv/education.yaml'),
-  schema: positionSchema,
+  /** Only degrees carry honours, so it extends the shared schema here. */
+  schema: positionSchema.extend({ honours: honoursSchema.optional() }),
 });
 
 const experience = defineCollection({
