@@ -1,3 +1,7 @@
+# Course titles are the institution's own and stay untranslated, in sentence
+# case: Spanish does not title-case them, and one convention across all three
+# degrees beats copying each transcript's own shouting.
+#
 # Degrees. Average marks are deliberately omitted — the distinctions say more
 # than a number out of ten does. Honours are kept, but by credit weight rather
 # than by subject count, and the full list sits behind a disclosure on the web
@@ -15,10 +19,6 @@
     start: '2024-10'
     end: null
 
-# Honours pending: 3 subjects per the 2026 CV, which gives only the count.
-# Coursework only — the thesis took the maximum grade but no honours, unlike
-# the B.Sc. one. The degree is 60 ECTS, so `totalCredits: 60` once the
-# subjects are known.
 - id: msc-electronic-systems
   title:
     en: M.Sc. in Electronic Systems Engineering
@@ -37,12 +37,13 @@
     - en: Maximum grade in the Master’s Thesis
       es: Calificación máxima en el Trabajo Fin de Máster
       eu: Gehienezko kalifikazioa Master Amaierako Lanean
+  honours:
+    totalCredits: 60
+    subjects:
+      - { name: 'Laboratorio de circuitos y sistemas electrónicos', credits: 4 }
+      - { name: 'Sistemas empotrados', credits: 4 }
+      - { name: 'Laboratorio de sistemas electrónicos', credits: 3 }
 
-# Honours pending: 4 subjects per the 2026 CV, of which the 2021 CV in this
-# repo's history (494415f) names two — Ingeniería de Sistemas de
-# instrumentación (6 ECTS) and Sistemas y Servicios Multimedia (6 ECTS).
-# Coursework only — the thesis took the maximum grade but no honours, unlike
-# the B.Sc. one. The degree is 120 ECTS.
 - id: msc-telecommunications
   title:
     en: M.Sc. in Telecommunications Engineering
@@ -61,6 +62,13 @@
     - en: Maximum grade in the Master’s Thesis
       es: Calificación máxima en el Trabajo Fin de Máster
       eu: Gehienezko kalifikazioa Master Amaierako Lanean
+  honours:
+    totalCredits: 120
+    subjects:
+      - { name: 'Análisis de señal para comunicaciones', credits: 6 }
+      - { name: 'Sistemas y servicios multimedia', credits: 6 }
+      - { name: 'Ingeniería de sistemas de instrumentación', credits: 6 }
+      - { name: 'Sistemas electrónicos para IoT', credits: 4 }
 
 - id: bsc-sound-image
   title:
@@ -93,8 +101,8 @@
       - { name: 'Electrónica II', credits: 6 }
       - { name: 'Señales y sistemas', credits: 6 }
       - { name: 'Microprocesadores', credits: 6 }
-      - { name: 'Sistemas Operativos', credits: 4.5 }
-      - { name: 'Acústica Arquitectónica', credits: 6 }
+      - { name: 'Sistemas operativos', credits: 4.5 }
+      - { name: 'Acústica arquitectónica', credits: 6 }
       - { name: 'Ingeniería de vídeo', credits: 4.5 }
       - { name: 'Síntesis y animación de imágenes', credits: 4.5 }
       - { name: 'Sistemas basados en microprocesador', credits: 6 }
