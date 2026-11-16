@@ -1,0 +1,12 @@
+name: destinoteca
+kind: personal
+status: active
+period:
+  start: '2026'
+  end: null
+summary:
+  en: Archive of station departure boards and clocks, with working replicas in the browser.
+  es: Archivo de teleindicadores, paneles de salidas y relojes de estación, con réplicas que funcionan en el navegador.
+  eu: Geltokietako irteera-panel eta erlojuen artxiboa, nabigatzailean dabiltzan erreplikekin.
+tech: [TypeScript, Astro]
+primaryUrl: https://oierlauzi.github.io/destinoteca/
